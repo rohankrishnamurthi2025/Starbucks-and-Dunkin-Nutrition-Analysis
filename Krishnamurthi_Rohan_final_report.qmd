@@ -1,0 +1,73 @@
+---
+title: "Exploratory Data Analysis of Starbucks Nutritional Information"
+subtitle: |
+  | Final Project 
+  | Data Science 1 with R (STAT 301-1)
+author: "Rohan Krishnamurthi"
+date: today
+
+format:
+  html:
+    toc: true
+    embed-resources: true
+    
+execute:
+  echo: false
+  warning: false
+
+from: markdown+emoji 
+---
+
+::: {.callout-tip icon="false"}
+## Github Repo Link
+
+[https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025](https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025)
+
+:::
+
+## Introduction
+
+In this report, I am inquiring about the nutritional information of Starbucks food and drink items. The first dataset I am analyzing contains relevant nutritional information of all beverages available at Starbucks. The second dataset I am using contains relevant nutritional information regarding all of the food items available at Starbucks.
+
+### Motivation for Research
+
+I chose these datasets because I normally enjoy Starbucks's offerings. However, it must be noted that many students and I are currently boycotting Starbucks due to the company's decision to not support for the Palestinian people given the humanitarian crisis they are currently experiencing. While I enjoy their products, I currently will not support the company due to this issue.
+
+Nevertheless, I have had plenty of items from both their drink and food menus and I feel knowledgeable enough to work with data concerning both. Also, I really enjoy making and trying intricate coffee and tea drinks, so I'd be happy to work with data regarding Starbucks's many beverages. I decided to include the food information as well as a challenge to work with two separate sets of data.
+
+Some initial questions of interest are how the calories and other nutritional information vary by drink type or by food item. For example, which drink items and food items are most nutritious? Which items are most unhealthy? One specific question I can think of, involving both data sets, is what combination of a drink and food item is most nutritious. This can be determined by identifying the combination highest in protein, lowest in sugar, lowest in calories, etc. Another question I have are which drink or food items are least nutritious and should be generally avoided.
+
+## Data Overview and Quality
+
+```{r}
+#| label: basic-setup
+
+# load packages and data
+library(magick)
+library(tidyverse)
+library(png)
+library(kableExtra)
+
+#EX: my_data <- read_csv("data/starbucks_drinks_data.csv")
+```
+
+Link to `starbucks_drink_data` dataset: <https://github.com/reisanar/datasets/blob/master/starbucks.csv>
+
+Link to `starbucks_food_data` dataset: <https://www.kaggle.com/datasets/starbucks/starbucks-menu/>
+
+### Data Cleaning and Preparation
+
+## Explorations
+
+## Conclusions
+
+## References
+
+Arvidsson, J. (2023, September) Dunkin' Donuts' Nutrition: Dunkin' Donuts' Menu Nutrition, Micronutrients, and Calorie Information. Kaggle. <https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition>
+
+Sanchez-Arias, R. (2023, October 19) Sample Datasets: A collection of datasets from multiple sources to be used for demonstrations in data science courses. GitHub. <https://github.com/reisanar/datasets>
+
+Starbucks. (2017) Nutrition factors for Starbucks: Nutrition information for Starbucks menu items, including food and drinks. Kaggle. <https://www.kaggle.com/datasets/starbucks/starbucks-menu/data>
+
+
+
