@@ -1,5 +1,5 @@
 ---
-title: "Exploratory Data Analysis of Starbucks Nutritional Information"
+title: "Exploratory Data Analysis of Starbucks' and Dunkin Donuts' Nutritional Information"
 subtitle: |
   | Final Project 
   | Data Science 1 with R (STAT 301-1)
@@ -20,22 +20,22 @@ from: markdown+emoji
 
 ::: {.callout-tip icon="false"}
 ## Github Repo Link
-
 [https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025](https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025)
-
 :::
 
 ## Introduction
 
-In this report, I am inquiring about the nutritional information of Starbucks food and drink items. The first dataset I am analyzing contains relevant nutritional information of all beverages available at Starbucks. The second dataset I am using contains relevant nutritional information regarding all of the food items available at Starbucks.
+In this report, I am inquiring about the nutritional information of Starbucks' and Dunkin Donuts' food and drink items. The first dataset I am analyzing contains relevant nutritional information of all beverages available at Starbucks. The second dataset concerns all of the food items available at Starbucks. The third dataset concerns the nutritional information of all  products, both food and drink items, available at Dunkin Donuts.
 
 ### Motivation for Research
 
-I chose these datasets because I normally enjoy Starbucks's offerings. However, it must be noted that many students and I are currently boycotting Starbucks due to the company's decision to not support for the Palestinian people given the humanitarian crisis they are currently experiencing. While I enjoy their products, I currently will not support the company due to this issue.
+I chose these datasets because I normally enjoy both Starbucks's and Dunkin Donuts' offerings. However, it must be noted that many students and I are currently boycotting Starbucks due to the company's decision to not support for the Palestinian people given the humanitarian crisis they are currently experiencing. While I enjoy their products, I currently will not support the company due to this issue.
 
-Nevertheless, I have had plenty of items from both their drink and food menus and I feel knowledgeable enough to work with data concerning both. Also, I really enjoy making and trying intricate coffee and tea drinks, so I'd be happy to work with data regarding Starbucks's many beverages. I decided to include the food information as well as a challenge to work with two separate sets of data.
+Nevertheless, I have had plenty of items from both their drink and food menus and I feel knowledgeable enough to work with data concerning both. Also, I really enjoy making and trying intricate coffee and tea drinks, so I'd be happy to work with data regarding Starbucks and Dunkin Donuts. I decided to include the food information as well as a challenge to work with multiple sets of data. Working with data from both Starbucks and Dunkin Donuts allows more depth in the exploration of nutrition information.
 
-Some initial questions of interest are how the calories and other nutritional information vary by drink type or by food item. For example, which drink items and food items are most nutritious? Which items are most unhealthy? One specific question I can think of, involving both data sets, is what combination of a drink and food item is most nutritious. This can be determined by identifying the combination highest in protein, lowest in sugar, lowest in calories, etc. Another question I have are which drink or food items are least nutritious and should be generally avoided.
+### Research Questions
+
+The overarching research question for this EDA is what can one consume at either Starbucks or Dunkin Donuts in order to maintain a healthy, nutritious diet. There are many ways to address this question. Some initial querries are how do the calories, fat, protein and sugar vary by drink type or by food item at either retailer. To involve both food and drink items, I propose investigating which combination of food and drink items is most nutritious, at either Starbucks or Dunkin Donuts. A related question I have is which drink or food items are least nutritious and should be generally avoided. Lastly, I propose questioning how combinations of nutritious food and drinks vary from Starbucks and Dunkin Donuts, and which restaurant has the most nutritious options overall.
 
 ## Data Overview and Quality
 
@@ -55,7 +55,15 @@ Link to `starbucks_drink_data` dataset: <https://github.com/reisanar/datasets/bl
 
 Link to `starbucks_food_data` dataset: <https://www.kaggle.com/datasets/starbucks/starbucks-menu/>
 
+Link to `dunkin_donuts_data` dataset: <https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition>
+
+
 ### Data Cleaning and Preparation
+
+
+
+
+
 
 ## Explorations
 

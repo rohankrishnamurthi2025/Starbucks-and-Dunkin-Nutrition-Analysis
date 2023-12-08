@@ -9,7 +9,7 @@
 <meta name="author" content="Rohan Krishnamurthi">
 <meta name="dcterms.date" content="2023-12-07">
 
-<title>Exploratory Data Analysis of Starbucks Nutritional Information</title>
+<title>Exploratory Data Analysis of Starbucks and Dunkin Donuts Nutritional Information</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3044,6 +3044,7 @@ vertical-align: -.125em;
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#motivation-for-research" id="toc-motivation-for-research" class="nav-link" data-scroll-target="#motivation-for-research">Motivation for Research</a></li>
+  <li><a href="#research-questions" id="toc-research-questions" class="nav-link" data-scroll-target="#research-questions">Research Questions</a></li>
   </ul></li>
   <li><a href="#data-overview-and-quality" id="toc-data-overview-and-quality" class="nav-link" data-scroll-target="#data-overview-and-quality">Data Overview and Quality</a>
   <ul class="collapse">
@@ -3059,7 +3060,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exploratory Data Analysis of Starbucks Nutritional Information</h1>
+<h1 class="title">Exploratory Data Analysis of Starbucks and Dunkin Donuts Nutritional Information</h1>
 <p class="subtitle lead"></p><div class="line-block">Final Project<br>
 Data Science 1 with R (STAT 301-1)</div><p></p>
 </div>
@@ -3105,18 +3106,22 @@ Github Repo Link
 </div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this report, I am inquiring about the nutritional information of Starbucks food and drink items. The first dataset I am analyzing contains relevant nutritional information of all beverages available at Starbucks. The second dataset I am using contains relevant nutritional information regarding all of the food items available at Starbucks.</p>
+<p>In this report, I am inquiring about the nutritional information of Starbucks and Dunkin Donuts food and drink items. The first dataset I am analyzing contains relevant nutritional information of all beverages available at Starbucks. The second dataset concerns all of the food items available at Starbucks. The third dataset concerns the nutritional information of all products, both food and drink items, available at Dunkin Donuts.</p>
 <section id="motivation-for-research" class="level3">
 <h3 class="anchored" data-anchor-id="motivation-for-research">Motivation for Research</h3>
-<p>I chose these datasets because I normally enjoy Starbucks’s offerings. However, it must be noted that many students and I are currently boycotting Starbucks due to the company’s decision to not support for the Palestinian people given the humanitarian crisis they are currently experiencing. While I enjoy their products, I currently will not support the company due to this issue.</p>
-<p>Nevertheless, I have had plenty of items from both their drink and food menus and I feel knowledgeable enough to work with data concerning both. Also, I really enjoy making and trying intricate coffee and tea drinks, so I’d be happy to work with data regarding Starbucks’s many beverages. I decided to include the food information as well as a challenge to work with two separate sets of data.</p>
-<p>Some initial questions of interest are how the calories and other nutritional information vary by drink type or by food item. For example, which drink items and food items are most nutritious? Which items are most unhealthy? One specific question I can think of, involving both data sets, is what combination of a drink and food item is most nutritious. This can be determined by identifying the combination highest in protein, lowest in sugar, lowest in calories, etc. Another question I have are which drink or food items are least nutritious and should be generally avoided.</p>
+<p>I chose these datasets because I normally enjoy both Starbucks’s and Dunkin Donuts’ offerings. However, it must be noted that many students and I are currently boycotting Starbucks due to the company’s decision to not support for the Palestinian people given the humanitarian crisis they are currently experiencing. While I enjoy their products, I currently will not support the company due to this issue.</p>
+<p>Nevertheless, I have had plenty of items from both their drink and food menus and I feel knowledgeable enough to work with data concerning both. Also, I really enjoy making and trying intricate coffee and tea drinks, so I’d be happy to work with data regarding Starbucks and Dunkin Donuts. I decided to include the food information as well as a challenge to work with multiple sets of data. Working with data from both Starbucks and Dunkin Donuts allows more depth in the exploration of nutrition information.</p>
+</section>
+<section id="research-questions" class="level3">
+<h3 class="anchored" data-anchor-id="research-questions">Research Questions</h3>
+<p>The overarching research question for this EDA is what can one consume at either Starbucks or Dunkin Donuts in order to maintain a healthy, nutritious diet. There are many ways to address this question. Some initial questions of interest are how do the calories, fat, and sugar vary by drink type or by food item. One specific question I can think of, involving both the food and drink data sets, is what combination of a drink and food item is most nutritious. This can be determined by identifying the combination highest in protein, lowest in sugar, lowest in calories, etc. Another question I have are which drink or food items are least nutritious and should be generally avoided. Lastly, I propose questioning how combinations of nutritious food and drinks vary from Starbucks and Dunkin Donuts, and which one has the most nutritious options.</p>
 </section>
 </section>
 <section id="data-overview-and-quality" class="level2">
 <h2 class="anchored" data-anchor-id="data-overview-and-quality">Data Overview and Quality</h2>
 <p>Link to <code>starbucks_drink_data</code> dataset: <a href="https://github.com/reisanar/datasets/blob/master/starbucks.csv" class="uri">https://github.com/reisanar/datasets/blob/master/starbucks.csv</a></p>
 <p>Link to <code>starbucks_food_data</code> dataset: <a href="https://www.kaggle.com/datasets/starbucks/starbucks-menu/" class="uri">https://www.kaggle.com/datasets/starbucks/starbucks-menu/</a></p>
+<p>Link to <code>dunkin_donuts_data</code> dataset: <a href="https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition" class="uri">https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition</a></p>
 <section id="data-cleaning-and-preparation" class="level3">
 <h3 class="anchored" data-anchor-id="data-cleaning-and-preparation">Data Cleaning and Preparation</h3>
 </section>
