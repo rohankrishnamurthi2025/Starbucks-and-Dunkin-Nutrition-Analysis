@@ -1,0 +1,386 @@
+---
+title: "Final Project Progress Memo 2"
+subtitle: |
+  | Final Project 
+  | Data Science 1 with R (STAT 301-1)
+author: "Rohan Krishnamurthi"
+date: today
+
+format:
+  html:
+    toc: true
+    embed-resources: true
+    
+execute:
+  echo: false
+  warning: false
+
+from: markdown+emoji 
+---
+
+::: {.callout-tip icon=false}
+
+## Github Repo Link
+
+[https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025](https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025)
+
+:::
+
+
+## Introduction
+In this report, I am inquiring about the nutritional information of Starbucks food and drink items. The first dataset I am using is entitled "starbucks.csv". It contains relevant nutritional information of all beverages available at Starbucks. The second dataset I am using is entitled "starbucks_menu_nutrition_food.csv". It contains relevant nutritional information regarding all of the food items available at Starbucks. I chose these datasets because I normally enjoy Starbucks's offerings. However, it must be noted that many students and I are currently boycotting Starbucks due to the company's decision to not denounce any support for the Palestinian people given the humanitarian crisis they are currently experiencing. While I enjoy their products, I currently will not  support the company due to this issue.
+
+Nevertheless, I have had plenty of items from both their drink and food menus and I feel knowledgeable enough to work with data concerning both. Also, I really enjoy making and trying intricate coffee and tea drinks, so I'd be happy to work with data regarding Starbucks's many beverages. I decided to include the food information as well as a challenge to work with two separate sets of data.
+
+Some initial questions of interest are how the calories and other nutritional information vary by drink type or by food item. For example, which drink items and food items are most nutritious? Which items are most unhealthy? One specific question I can think of, involving both data sets, is what combination of a drink and food item is most nutritious. This can be determined by identifying the combination highest in protein, lowest in sugar, lowest in calories, etc. Another question I have are which drink or food items are least nutritious and should be generally avoided.
+
+Starbucks Drinks dataset:
+[https://github.com/reisanar/datasets/blob/master/starbucks.csv](https://github.com/reisanar/datasets/blob/master/starbucks.csv)
+
+Starbucks Food dataset:
+[https://www.kaggle.com/datasets/starbucks/starbucks-menu/](https://www.kaggle.com/datasets/starbucks/starbucks-menu/)
+
+The packages installed are the "tidyverse" and "magick" packages. Both datasets are read in as "csv" files. 
+
+
+```{r}
+library(magick)
+library(tidyverse)
+starbucks_drinks_data <- read_csv("data/raw/starbucks.csv")
+starbucks_food_data <- read_csv("data/raw/starbucks_menu_nutrition_food_redo.csv")
+```
+
+
+## Data overview & quality
+
+The first dataset, stored as `starbucks_drinks_data`, contains 18 variables and 242 observations, corresponding to 242 different drinks. Three of the variables contain categorical data, corresponding to drink identifiers, and the remaining 15 variables contain numerical data, corresponding to nutritional information. There are some observations with missing nutritional information (numerical values), which contain NA instead of the actual numerical values. Specifically, analysis regarding drink caffeine content will have to be avoided for the rows with NA values for this variable.
+
+The second dataset, stored as `starbucks_food_data`, contains 6 variables and 113 observations, corresponding to 113 different food items. One variable contains categorical data, corresponding to the food name. The remaining five variables contain numerical data, corresponding to the nutritional information, such as calories, fat, carbohydrates, fiber, and protein content. There are no missing values in this data set.
+
+
+## Data cleaning and preparation
+
+
+In the `starbucks_food_data` data frame, the main issue is that the variable names have spaces. They should be renamed to singular strings, so they can be referred to and extracted easily. In order to do this, the spaces should be replaced with underscores using the names() function. Also, the variable names should be made into lowercase names for consistency.
+```{r}
+
+names(starbucks_food_data)[names(starbucks_food_data) == "Food Item"] <- "food_item"
+names(starbucks_food_data)[names(starbucks_food_data) == "Calories"] <- "calories"
+names(starbucks_food_data)[names(starbucks_food_data) == "Fat g"] <- "fat_g"
+names(starbucks_food_data)[names(starbucks_food_data) == "Carb g"] <- "carb_g"
+names(starbucks_food_data)[names(starbucks_food_data) == "Fiber g"] <- "fiber_g"
+names(starbucks_food_data)[names(starbucks_food_data) == "Protein g"] <- "protein_g"
+
+```
+
+
+The `starbucks_drink_data` data frame has the same issue in that the column names have uppercase letters and spaces. This can be addressed using the same function. Additionally, in the column names "Total Fat g", "Dietary Fiber g", and "Total Carbohydrates g", the initial word  can be removed so these variables have identical names to the `starbucks_food_data` dataset. This will facilitate joining observations in both data frames.
+
+```{r}
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Beverage category"] <- "beverage_category"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Beverage"] <- "beverage"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Beverage prep"] <- "beverage_prep"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Calories"] <- "calories"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Total Fat g"] <- "fat_g"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Trans Fat g"] <- "trans_fat_g"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Saturated Fat g"] <- "saturated_fat_g"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Sodium mg"] <- "sodium_mg"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Total Carbohydrates g"] <- "carb_g"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Cholesterol mg"] <- "cholesterol_mg"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Dietary Fiber g"] <- "fiber_g"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Sugars g"] <- "sugars_g"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Protein g"] <- "protein_g"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Vitamin A percent DV"] <- "vitamin_a_percent_dv"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Vitamin C percent DV"] <- "vitamin_c_percent_dv"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Calcium percent DV"] <- "calcium_percent_dv"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Iron percent DV"] <- "iron_percent_dv"
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Caffeine mg"] <- "caffeine_mg"
+
+
+```
+
+
+In the `beverage_prep` column of `starbucks_drink_data`, the size of beverage is missing in some observations but can be deduced from the size listed of the previous (or second previous) beverage. The size can be added to this column using a for loop to iterate through each observation, and if statements to identify the size and then add it to the observation.
+```{r}
+
+for (i in 1:(length(starbucks_drinks_data$beverage_prep) - 2)) {
+  if (starbucks_drinks_data$beverage_prep[i] == "Short Nonfat Milk"){
+    if (starbucks_drinks_data$beverage_prep[i+1] == "2% Milk"){
+      starbucks_drinks_data$beverage_prep[i+1] <- "Short 2% Milk"
+    }
+    if (starbucks_drinks_data$beverage_prep[i+1] == "Whole Milk"){
+      starbucks_drinks_data$beverage_prep[i+1] <- "Short Whole Milk"
+    }
+    if (starbucks_drinks_data$beverage_prep[i+2] == "Soymilk"){
+      starbucks_drinks_data$beverage_prep[i+2] <- "Short Soymilk"
+    }
+  }
+  if (starbucks_drinks_data$beverage_prep[i] == "Tall Nonfat Milk"){
+    if (starbucks_drinks_data$beverage_prep[i+1] == "2% Milk"){
+      starbucks_drinks_data$beverage_prep[i+1] <- "Tall 2% Milk"
+    }
+    if (starbucks_drinks_data$beverage_prep[i+1] == "Whole Milk"){
+      starbucks_drinks_data$beverage_prep[i+1] <- "Tall Whole Milk"
+    }
+    if (starbucks_drinks_data$beverage_prep[i+2] == "Soymilk"){
+      starbucks_drinks_data$beverage_prep[i+2] <- "Tall Soymilk"
+    }
+  }
+  if (starbucks_drinks_data$beverage_prep[i] == "Grande Nonfat Milk"){
+    if (starbucks_drinks_data$beverage_prep[i+1] == "2% Milk"){
+      starbucks_drinks_data$beverage_prep[i+1] <- "Grande 2% Milk"
+    }
+    if (starbucks_drinks_data$beverage_prep[i+1] == "Whole Milk"){
+      starbucks_drinks_data$beverage_prep[i+1] <- "Grande Whole Milk"
+    }
+    if (starbucks_drinks_data$beverage_prep[i+2] == "Soymilk"){
+      starbucks_drinks_data$beverage_prep[i+2] <- "Grande Soymilk"
+    }
+  }
+  if (starbucks_drinks_data$beverage_prep[i] == "Venti Nonfat Milk"){
+    if (starbucks_drinks_data$beverage_prep[i+1] == "2% Milk"){
+      starbucks_drinks_data$beverage_prep[i+1] <- "Venti 2% Milk"
+    }
+    if (starbucks_drinks_data$beverage_prep[i+1] == "Whole Milk"){
+      starbucks_drinks_data$beverage_prep[i+1] <- "Venti Whole Milk"
+    }
+    if (starbucks_drinks_data$beverage_prep[i+2] == "Soymilk"){
+      starbucks_drinks_data$beverage_prep[i+2] <- "Venti Soymilk"
+    }
+  }
+  
+}
+
+
+```
+
+
+Additionally, the information in the `beverage_prep` column in `starbucks_drinks_data` can be used to create new variables-- one for milk type and one for size. First, the column `milk_type` can be added be extracting the type of milk from the `beverage_prep` column. Drinks without any milk will intentionally have `NA` in this column. A for loop can be used to iterate through each observation in the `beverage_prep` column, and if statements can be used to identify the type of milk and add it to the `milk_type` column for each observation.
+
+```{r}
+starbucks_drinks_data <- starbucks_drinks_data |> 
+  mutate(milk_type = NA)
+
+for (i in 1:(length(starbucks_drinks_data$beverage_prep))){
+  if (grepl("Nonfat Milk", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$milk_type[i] <- "Nonfat Milk"
+  }
+  if (grepl("2% Milk", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$milk_type[i] <- "2% Milk"
+  }
+  if (grepl("Soymilk", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$milk_type[i] <- "Soymilk"
+  }
+  if (grepl("Whole Milk", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$milk_type[i] <- "Whole Milk"
+  }
+}
+
+
+```
+
+The column `size` can be added be extracting the size of drink from the `beverage_prep` column. A for loop can be used to iterate through each observation in the `beverage_prep` column, and if statements can be used to identify the beverage size and add it to the `size` column for each observation.
+
+```{r}
+
+starbucks_drinks_data <- starbucks_drinks_data |> 
+  mutate(size = NA)
+
+for (i in 1:(length(starbucks_drinks_data$beverage_prep))){
+  if (grepl("Short", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$size[i] <- "Short"
+  }
+  if (grepl("Tall", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$size[i] <- "Tall"
+  }
+  if (grepl("Grande", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$size[i] <- "Grande"
+  }
+  if (grepl("Venti", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$size[i] <- "Venti"
+  }
+  if (grepl("Solo", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$size[i] <- "Solo"
+  }
+  if (grepl("Doppio", starbucks_drinks_data$beverage_prep[i], fixed = TRUE)){
+    starbucks_drinks_data$size[i] <- "Doppio"
+  }
+}
+
+```
+
+
+Finally, a new data frame entitled `starbucks_all_data` can be created by joining the two existing data frames with the merge() function. The `beverage` and `food_item` variables must be renamed to `item`, so the data frames share this variable. Then, the two data frames can be combined by the variables `item`, `calories`, `fat_g`, `carb_g`, `fiber_g`, and `protein_g`, having selected these variables upon entering the data sets into the merge() function.
+
+```{r}
+names(starbucks_drinks_data)[names(starbucks_drinks_data) == "beverage"] <- "item"
+names(starbucks_food_data)[names(starbucks_food_data) == "food_item"] <- "item"
+
+starbucks_all_data <- merge(
+  (starbucks_drinks_data |> 
+  select(item, calories, fat_g, carb_g, fiber_g, protein_g)),
+  (starbucks_food_data |> 
+  select(item, calories, fat_g, carb_g, fiber_g, protein_g)),
+  all.x = TRUE, 
+  all.y = TRUE)
+
+
+
+```
+
+
+## Exploratory Data Analysis
+
+
+### Most Unhealthy Drink Types
+The first question I propose is which beverages are most "unhealthy". This can be examined by comparing the calories, fat, or sugar of each type of beverage, or studying a different variable. First, bar charts were made comparing the calories, fat, and sugar content of each type of beverage.
+
+```{r}
+
+
+graph_1 <- starbucks_drinks_data |> 
+  ggplot(aes(x = beverage_category, y = fat_g)) + 
+  geom_boxplot() + 
+  labs(title = "Boxplot of grams of fat by beverage type", 
+       x = "Beverage Category", y = "Fat (g)") +
+  theme(axis.text.x = element_text(angle = 90))
+
+ggsave(filename = ("figures/beverage_fat_boxplot.png"), plot = graph_1)
+beverage_fat_boxplot <- image_read("figures/beverage_fat_boxplot.png")
+beverage_fat_boxplot
+
+graph_2 <- starbucks_drinks_data |> 
+  ggplot(aes(x = beverage_category, y = sugars_g)) + 
+  geom_boxplot() + 
+  labs(title = "Boxplot of grams of sugar by beverage type", 
+       x = "Beverage Category", y = "Sugar (g)") +
+  theme(axis.text.x = element_text(angle = 90))
+
+ggsave(filename = ("figures/beverage_sugar_boxplot.png"), plot = graph_2)
+beverage_sugar_boxplot <- image_read("figures/beverage_sugar_boxplot.png")
+beverage_sugar_boxplot
+
+graph_3 <- starbucks_drinks_data |> 
+  ggplot(aes(x = beverage_category, y = calories)) + 
+  geom_boxplot() + 
+  labs(title = "Boxplot of grams of calories by beverage type", 
+       x = "Beverage Category", y = "Calories") +
+  theme(axis.text.x = element_text(angle = 90))
+
+ggsave(filename = ("figures/beverage_calories_boxplot.png"), plot = graph_3)
+beverage_sugar_boxplot <- image_read("figures/beverage_calories_boxplot.png")
+beverage_sugar_boxplot
+
+```
+
+From the graphs above, it is evident that Signature Espresso Drinks have the most fat, Frappuccino Blended Coffee drinks have the most sugar, and Smoothies have the most calories. A limitation of these boxplots is that each drink of each category counts as a data point, meaning that the same drink of different sizes count as separate data points. To improve these histograms, drinks only of the same size can be compared. 
+
+### Most Nutritious Drink Types
+
+Another question I propose is which type of drink is most nutritious This can be evaluated by comparing the percent daily value of Vitamin A, Vitamin C, Iron, and Calcium for each beverage type. This was done with the following frequency poly charts. Histograms were not used due to a lack of data points other than 0%. 
+```{r}
+
+
+graph_4 <- starbucks_drinks_data |> 
+  ggplot(aes(x = vitamin_a_percent_dv, y = ..density..)) + 
+  geom_freqpoly(mapping = aes(colour = beverage_category)) + 
+  labs(title = "Boxplot of Vitamin A Percent Daily Value by beverage type", 
+       x = "Beverage Category", y = "Vitamin A Percent Daily Value") +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(filename = ("figures/beverage_vitamin_a.png"), plot = graph_4)
+beverage_vitamin_a <- image_read("figures/beverage_vitamin_a.png")
+beverage_vitamin_a
+
+graph_5 <- starbucks_drinks_data |> 
+  ggplot(aes(x = vitamin_c_percent_dv, y = ..density..)) + 
+  geom_freqpoly(mapping = aes(colour = beverage_category)) + 
+  labs(title = "Boxplot of Vitamin C Percent Daily Value by beverage type", 
+       x = "Beverage Category", y = "Vitamin C Percent Daily Value") +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(filename = ("figures/beverage_vitamin_c.png"), plot = graph_5)
+beverage_vitamin_c <- image_read("figures/beverage_vitamin_c.png")
+beverage_vitamin_c
+
+graph_6 <- starbucks_drinks_data |> 
+  ggplot(aes(x = calcium_percent_dv, y = ..density..)) + 
+  geom_freqpoly(mapping = aes(colour = beverage_category)) + 
+  labs(title = "Boxplot of Calcium Percent Daily Value by beverage type", 
+       x = "Beverage Category", y = "Calcium Percent Daily Value") +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(filename = ("figures/beverage_calcium.png"), plot = graph_6)
+beverage_calcium <- image_read("figures/beverage_calcium.png")
+beverage_calcium
+
+graph_7 <- starbucks_drinks_data |> 
+  ggplot(aes(x = iron_percent_dv, y = ..density..)) + 
+  geom_freqpoly(mapping = aes(colour = beverage_category)) + 
+  labs(title = "Boxplot of Iron Percent Daily Value by beverage type", 
+       x = "Beverage Category", y = "Iron Percent Daily Value") +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(filename = ("figures/beverage_iron.png"), plot = graph_7)
+beverage_iron <- image_read("figures/beverage_iron.png")
+beverage_iron
+
+
+
+```
+From these charts, it is evident that Smoothies have the highest proportion of Vitamin A and Vitamin C. Signature Espresso Drinks and Tazo Tea Drinks have the highest proportions of Calcium. Additionally, Classic Espresso Drinks and Signature Espresso Drinks had the highest proportions of Iron.
+
+
+### Nutrition by Type of Milk 
+
+Another question I have is how the nutrition content of each drink varies by milk type. For this analysis, I measured the calories, fat, sugar, and then protein of each drink having grouped them by milk type. This was done by creating boxplots, with `milk_type` being the categorical variable, and then `calories`, `fat_g`, `sugar_g` and then `protein_g` being the continuous variables. Before these were created, the data were filtered to remove observations in which the milk type was not specified.
+
+```{r}
+graph_8 <- starbucks_drinks_data |> 
+  filter(is.na(milk_type) == FALSE) |> 
+  ggplot(aes(x = milk_type, y = fat_g)) + 
+  geom_boxplot() + 
+  labs(title = "Boxplot of grams of fat by milk type", 
+       x = "Milk Category", y = "Fat (g)") +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(filename = ("figures/milk_fat_boxplot.png"), plot = graph_8)
+milk_fat_boxplot <- image_read("figures/milk_fat_boxplot.png")
+milk_fat_boxplot
+
+graph_9 <- starbucks_drinks_data |> 
+  filter(is.na(milk_type) == FALSE) |> 
+  ggplot(aes(x = milk_type, y = sugars_g)) + 
+  geom_boxplot() + 
+  labs(title = "Boxplot of grams of sugar by milk type", 
+       x = "Milk Category", y = "Sugar (g)") +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(filename = ("figures/milk_sugar_boxplot.png"), plot = graph_9)
+milk_sugar_boxplot <- image_read("figures/milk_sugar_boxplot.png")
+milk_sugar_boxplot
+
+
+graph_10 <- starbucks_drinks_data |> 
+  filter(is.na(milk_type) == FALSE) |> 
+  ggplot(aes(x = milk_type, y = calories)) + 
+  geom_boxplot() + 
+  labs(title = "Boxplot of calories by milk type", 
+       x = "Milk Category", y = "Calories") +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(filename = ("figures/milk_calories_boxplot.png"), plot = graph_10)
+milk_calories_boxplot <- image_read("figures/milk_calories_boxplot.png")
+milk_calories_boxplot
+
+graph_11 <- starbucks_drinks_data |> 
+  filter(is.na(milk_type) == FALSE) |> 
+  ggplot(aes(x = milk_type, y = protein_g)) + 
+  geom_boxplot() + 
+  labs(title = "Boxplot of protein by milk type", 
+       x = "Milk Category", y = "Protein") +
+  theme(axis.text.x = element_text(angle = 90))
+ggsave(filename = ("figures/milk_protein_boxplot.png"), plot = graph_11)
+milk_protein_boxplot <- image_read("figures/milk_protein_boxplot.png")
+milk_protein_boxplot
+
+```
+
+From the boxplots above, it was found that whole milk drinks had the highest calorie count and highest sugar content. Additionally, 2% milk drinks had the highest fat content, but also the highest protein content.
+
+
+## Summary Next Steps
+Overall, I have completed initial explorations regarding the nutrition of various beverage types and milk types of Starbucks drinks. As I wrap up this project, I hope to include a more comprehensive analysis regarding nutrition of beverages. This analysis should compare both variables of high-nutritional-value, such as protein and calcium, and variables of low-nutritional value, such as sugar and calories. Additionally, I hope to include a comprehensive analysis regarding nutrition of food products, comparing both high-nutritional-value and low-nutritional-value variables. Lastly, I hope to essentially integrate these two analyses to identify the combinations of food and drink items that are most nutritious and least nutritious.
