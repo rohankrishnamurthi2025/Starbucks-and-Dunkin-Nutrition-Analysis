@@ -1,0 +1,80 @@
+---
+title: "Progress Memo 1"
+subtitle: |
+  | Final Project 
+  | Data Science 1 with R (STAT 301-1)
+author: "Rohan Krishnamurthi"
+date: today
+
+format:
+  html:
+    toc: true
+    embed-resources: true
+    
+execute:
+  echo: false
+  warning: false
+
+from: markdown+emoji 
+---
+
+::: {.callout-tip icon=false}
+
+## Github Repo Link
+
+[https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025](https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025)
+
+:::
+
+
+## Data source
+
+The first dataset I am using is entitled "starbucks.csv". It contains information regarding all of the beverages available at Starbucks, including their name, size, calories, and other relevant nutritional information.
+
+The second dataset I am using is entitled "starbucks_menu_nutrition_food.csv". It contains information regarding all of the food items available at Starbucks, including their name, calories, and grams of protein, fat, fiber and carbohydrates. 
+
+If deemed necessary, the two datasets could be joined into one dataset by including their name, calories, and grams of fat, protein, fiber, and carbohydrates, as these variables are contained by both datasets. The drinks dataset contains additional nutritional information in  variables that are not contained in the food items dataset.
+
+Link to Starbucks Drinks dataset:
+[https://github.com/reisanar/datasets/blob/master/starbucks.csv](https://github.com/reisanar/datasets/blob/master/starbucks.csv)
+
+Link to Starbucks Food dataset:
+[https://www.kaggle.com/datasets/starbucks/starbucks-menu/](https://www.kaggle.com/datasets/starbucks/starbucks-menu/)
+
+
+## Why this data
+
+I chose these datasets because I really enjoy Starbucks's offerings. I have had plenty of items from both their drink and food menus and I feel knowledgeable enough to work with data concerning both. Also, I really enjoy making and trying intricate coffee and tea drinks, so I'd be happy to work with data regarding Starbucks's many beverages. I decided to include the food information as well as a challenge to work with two separate sets of data. Only some of the variables from the drinks dataset are also included in the food dataset, so it may be difficult to compare the different datasets. 
+
+Some potential questions of interest are how the calories and other nutritional information vary by drink type or by food item. For example, which drink items and food items are most nutritious? Which items are most unhealthy? One specific question I can think of, involving both data sets, is what combination of a drink and food item is most nutritious. This can be determined by identifying the combination highest in protein, lowest in sugar, lowest in calories, etc.
+
+## Data quality & complexity check
+
+I would use the following code, with the read_csv() function, to store the datasets to variables.
+
+
+library(tidyverse)
+
+starbucks_drinks_data <- read_csv(“data/starbucks.csv”)
+
+starbucks_drinks_data
+
+starbucks_food_data <- read_csv(“data/starbucks_menu_nutrition_food_redo.csv”)
+
+starbucks_food_data
+
+
+The first dataset, stored as `starbucks_drinks_data`, contains 18 variables and 242 observations, corresponding to 242 different drinks. 3 of the variables contain categorical data, corresponding to drink identifiers, and the remaining 15 variables contain numerical data, corresponding to nutritional information. There are some observations with missing nutritional information (numerical values), which contain NA instead of the actual numerical values. 
+
+The second dataset, stored as `starbucks_food_data`, contains 6 variables and 113 observations, corresponding to 113 different food items. One variable contains categorical data, corresponding to the food name, and the remaining five variables contain numerical data, corresponding to the nutritional information.
+
+## Potential data issues
+
+A potential issue involves merging the two datasets into one to directly compare the drink and food items. This is because the two datasets have unique variables that are not shared by the other. However, both the drink and food datasets contain information regarding calories and grams of protein, fiber, carbohydrates, and fat. These variables can be selected from each dataset, and then if the variables are under the same names, the two sets can be combined into one. This would output a dataset of food and drink items containing calorie, protein, fiber, carbohydrate, and fat information. 
+
+Additionally, the `starbucks_drinks_data` dataset is missing certain numerical values for nutritional information. This may complicate comparisons of nutritional information for different drinks. One way to address this issue is simply removing observations with missing values in certain comparisons, using the na.rm() function. Fortunately, the `starbucks_food_data` dataset is not missing any data.
+
+## Misc
+There are other datasets available that contain information regarding Starbucks drink items, although they are not as thorough as the dataset used. In some simpler comparisons, these other datasets can be used to identify trends in data when not as much nutritional information is needed.
+
+
