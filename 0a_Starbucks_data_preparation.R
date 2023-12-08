@@ -5,11 +5,11 @@ library(tidyverse)
 starbucks_drinks_data_raw <- read_csv("data/raw/starbucks.csv")
 starbucks_food_data_raw <- read_csv("data/raw/starbucks_menu_nutrition_food_redo.csv")
 
-#Make copies to then edit with
+#Make copies to then work with
 starbucks_drinks_data <- starbucks_drinks_data_raw
 starbucks_food_data <- starbucks_food_data_raw
 
-#Renaming food variable names
+#Renaming variable names in food dataset
 names(starbucks_food_data)[names(starbucks_food_data) == "Food Item"] <- "food_item"
 names(starbucks_food_data)[names(starbucks_food_data) == "Calories"] <- "calories"
 names(starbucks_food_data)[names(starbucks_food_data) == "Fat g"] <- "fat_g"
@@ -18,7 +18,7 @@ names(starbucks_food_data)[names(starbucks_food_data) == "Fiber g"] <- "fiber_g"
 names(starbucks_food_data)[names(starbucks_food_data) == "Protein g"] <- "protein_g"
 
 
-#Renaming drink variable names
+#Renaming variable names in drinks dataset
 names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Beverage category"] <- "beverage_category"
 names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Beverage"] <- "beverage"
 names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Beverage prep"] <- "beverage_prep"
@@ -40,8 +40,7 @@ names(starbucks_drinks_data)[names(starbucks_drinks_data) == "Caffeine mg"] <- "
 
 
 
-#Adding size to beverage prep column in drinks dataset
-
+#Adding size to beverage_prep column in drinks dataset
 for (i in 1:(length(starbucks_drinks_data$beverage_prep) - 2)) {
   if (starbucks_drinks_data$beverage_prep[i] == "Short Nonfat Milk"){
     if (starbucks_drinks_data$beverage_prep[i+1] == "2% Milk"){
@@ -92,7 +91,7 @@ for (i in 1:(length(starbucks_drinks_data$beverage_prep) - 2)) {
 
 
 
-#Add milk type column to drinks dataset
+#Add milk_type column to drinks dataset
 starbucks_drinks_data <- starbucks_drinks_data |> 
   mutate(milk_type = NA)
 
@@ -112,7 +111,6 @@ for (i in 1:(length(starbucks_drinks_data$beverage_prep))){
 }
 
 #Add size column to drinks dataset
-
 starbucks_drinks_data <- starbucks_drinks_data |> 
   mutate(size = NA)
 
@@ -138,7 +136,7 @@ for (i in 1:(length(starbucks_drinks_data$beverage_prep))){
 }
 
 
-#Create combined `starbucks_all_data` dataset
+#Creating combined `starbucks_all_data` dataset, from food and drinks dataset
 names(starbucks_drinks_data)[names(starbucks_drinks_data) == "beverage"] <- "item"
 names(starbucks_food_data)[names(starbucks_food_data) == "food_item"] <- "item"
 
