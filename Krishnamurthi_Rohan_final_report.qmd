@@ -39,29 +39,6 @@ The overarching research question for this EDA is what can one consume at either
 
 ## Data Overview and Quality
 
-```{r}
-#| label: basic-setup
-
-# load packages
-library(magick)
-library(tidyverse)
-library(png)
-library(kableExtra)
-
-#EX: my_data <- read_csv("data/starbucks_drinks_data.csv")
-
-#Load packages (cleaned and prepared in R scripts 0a and 0b)
-starbucks_drinks_data <- starbucks_drinks_data
-starbucks_food_data <- starbucks_food_data
-starbucks_data <- starbucks_data
-
-dunkin_donuts_data <- dunkin_donuts_data
-dunkin_donuts_food_data <- dunkin_donuts_food_data
-dunkin_donuts_drinks_data <- dunkin_donuts_drinks_data
-
-
-```
-
 The three raw datasets were then copied into new datasets, which were then cleaned and prepared for analysis. The first raw dataset, entitled "starbucks.csv", contains 18 variables and 242 observations, corresponding to 242 different drinks. Three of the variables contain categorical data, corresponding to drink identifiers, and the remaining 15 variables contain numerical data, corresponding to nutritional information. There are some observations (specifically, caffeine) with missing nutritional values, which contain NA instead of the actual numerical values.
 
 The second raw dataset, stored as "starbucks_menu_nutrition_food_redo.csv", contains 6 variables and 113 observations, corresponding to 113 different food items. One variable contains categorical data, corresponding to the food name. The remaining five variables contain numerical data, corresponding to the nutritional information, such as calories, fat, carbohydrates, fiber, and protein content. There are no missing values in this data set.
@@ -91,6 +68,27 @@ In the `0b_dunkin_data_preparation` R script, the dataset "dunkindonutsnutrition
 A new variable, `item_type` was created as a factor. The factor "drink" was assigned to drinks (based on the `category` variable) and the factor "food" was assigned to food items. Variables corresponding to nutritional information were converted into numeric vectors, as they generally contained numeric values. Moreover, a new factor variable, `size`, was created to identify the size of each drink. The size was extracted from the `item` name using the grepl() function. Items that were not given a size were assigned a factor of "not applicable". 
 
 Finally, the data was filtered into two new datasets: `dunkin_donuts_drinks_data`, containing the drink observations; and `dunkin_donuts_food_data`, containing the food observations.
+
+
+
+```{r}
+#| label: basic-setup
+
+# load packages
+library(magick)
+library(tidyverse)
+library(png)
+library(kableExtra)
+
+#EX: my_data <- read_csv("data/starbucks_drinks_data.csv")
+
+#Load packages (cleaned and prepared in R scripts 0a and 0b)
+#starbucks_drinks_data <- starbucks_drinks_data
+
+
+
+```
+
 
 ## Explorations
 
