@@ -140,7 +140,7 @@ for (i in 1:(length(starbucks_drinks_data$beverage_prep))){
 names(starbucks_drinks_data)[names(starbucks_drinks_data) == "beverage"] <- "item"
 names(starbucks_food_data)[names(starbucks_food_data) == "food_item"] <- "item"
 
-starbucks_all_data <- merge(
+starbucks_data <- merge(
   (starbucks_drinks_data |> 
      select(item, calories, fat_g, carb_g, fiber_g, protein_g)),
   (starbucks_food_data |> 

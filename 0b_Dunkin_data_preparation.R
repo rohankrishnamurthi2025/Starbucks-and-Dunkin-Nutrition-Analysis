@@ -22,7 +22,7 @@ names(dunkin_donuts_data)[names(dunkin_donuts_data) == "Sugars (g)"] <- "sugars_
 names(dunkin_donuts_data)[names(dunkin_donuts_data) == "Protein (g)"] <- "protein_g"
 names(dunkin_donuts_data)[names(dunkin_donuts_data) == "Weight Watcher Pnts"] <- "weight_watcher_points"
 
-#Add item type column (factor) to distinguish food and drink items
+#Add item type column (as a factor) to distinguish food and drink items
 dunkin_donuts_data <- dunkin_donuts_data |> 
   mutate(item_type = NA)
 
@@ -91,7 +91,7 @@ dunkin_donuts_data$sugars_g <- as.numeric(dunkin_donuts_data$sugars_g)
 dunkin_donuts_data$protein_g <- as.numeric(dunkin_donuts_data$protein_g)
 dunkin_donuts_data$weight_watcher_points <- as.numeric(dunkin_donuts_data$weight_watcher_points)
 
-#Add variable to record size (factor) of item
+#Add variable to record size (as a factor) of item
 dunkin_donuts_data <- dunkin_donuts_data |> 
   mutate(size = NA)
 
@@ -123,10 +123,10 @@ dunkin_donuts_data$category <- as.factor(dunkin_donuts_data$category)
 
 
 #Creating separate food and drink data sets
-dunkin_donuts_drinks <- dunkin_donuts_data |> 
+dunkin_donuts_drinks_data <- dunkin_donuts_data |> 
   filter(item_type == "drink")
 
-dunkin_donuts_food <- dunkin_donuts_data |> 
+dunkin_donuts_food_data <- dunkin_donuts_data |> 
   filter(item_type == "food")
 
 

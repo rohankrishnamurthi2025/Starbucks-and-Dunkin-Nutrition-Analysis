@@ -42,7 +42,7 @@ The overarching research question for this EDA is what can one consume at either
 ```{r}
 #| label: basic-setup
 
-# load packages and data
+# load packages
 library(magick)
 library(tidyverse)
 library(png)
@@ -50,18 +50,23 @@ library(kableExtra)
 
 #EX: my_data <- read_csv("data/starbucks_drinks_data.csv")
 
+#Load packages (cleaned and prepared in R scripts 0a and 0b)
 starbucks_drinks_data <- starbucks_drinks_data
 starbucks_food_data <- starbucks_food_data
-#dunkin_donuts_data <- dunkin_donuts_data
+starbucks_data <- starbucks_data
+
+dunkin_donuts_data <- dunkin_donuts_data
+dunkin_donuts_food_data <- dunkin_donuts_food_data
+dunkin_donuts_drinks_data <- dunkin_donuts_drinks_data
 
 
 ```
 
-The three raw datasets were then copied into new datasets, which were then cleaned and prepared for analysis. The first, stored as `starbucks_drinks_data`, contains 18 variables and 242 observations, corresponding to 242 different drinks. Three of the variables contain categorical data, corresponding to drink identifiers, and the remaining 15 variables contain numerical data, corresponding to nutritional information. There are some observations (specifically, caffeine) with missing nutritional values, which contain NA instead of the actual numerical values.
+The three raw datasets were then copied into new datasets, which were then cleaned and prepared for analysis. The first raw dataset, entitled "starbucks.csv", contains 18 variables and 242 observations, corresponding to 242 different drinks. Three of the variables contain categorical data, corresponding to drink identifiers, and the remaining 15 variables contain numerical data, corresponding to nutritional information. There are some observations (specifically, caffeine) with missing nutritional values, which contain NA instead of the actual numerical values.
 
-The second dataset, stored as `starbucks_food_data`, contains 6 variables and 113 observations, corresponding to 113 different food items. One variable contains categorical data, corresponding to the food name. The remaining five variables contain numerical data, corresponding to the nutritional information, such as calories, fat, carbohydrates, fiber, and protein content. There are no missing values in this data set.
+The second raw dataset, stored as "starbucks_menu_nutrition_food_redo.csv", contains 6 variables and 113 observations, corresponding to 113 different food items. One variable contains categorical data, corresponding to the food name. The remaining five variables contain numerical data, corresponding to the nutritional information, such as calories, fat, carbohydrates, fiber, and protein content. There are no missing values in this data set.
 
-The third dataset, stored as `dunkin_donuts_data`, contains 
+The third raw dataset, stored as "dunkindonutsnutrition.csv", contains 13 variables and 790 observations, corresponding to 780 different products sold by Dunking Donuts. All variables are stored as character vectors. Two variables concern the item category and name, while the remaining variables concern nutritional information. There are no missing values in this data set either.
 
 Raw dataset links:
 -- Starbucks drinks dataset: <https://github.com/reisanar/datasets/blob/master/starbucks.csv>
@@ -69,12 +74,23 @@ Raw dataset links:
 -- Dunkin Donuts dataset: <https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition>
 
 
-### Data Cleaning and Preparation
+### Starbucks Data Cleaning and Preparation
+In the `0a_starbucks_data_preparation` R script, the dataset "starbucks_menu_nutrition_food_redo.csv" was read in, copied as `starbucks_food_data`, and then cleaned. The first issue with the raw data was that the variable names had spaces, which could make it difficult ot select these variables. The spaces were replaced with underscores using the names() function. Also, the variable names were be made into lowercase names for consistency.
 
+The dataset "starbucks.csv" was read in, copied as `starbucks_drinks_data`, and then cleaned as well. The data frame had the same issue in that the column names had uppercase letters and spaces. This was addressed using the names() function as well. Additionally, in the column names "Total Fat g", "Dietary Fiber g", and "Total Carbohydrates g", the initial word was be removed so these variables would have identical names to the `starbucks_food_data` dataset. This made facilitated joining observations in both data frames.
 
+In the `beverage_prep` column of `starbucks_drink_data`, the size of beverage was missing in some observations but could be deduced from the size listed of the previous (or second previous) beverage. The size was added to this column using a "for loop" to iterate through each observation and if statements to identify the size and then add it to the observation.
 
+Additionally, the information in the `beverage_prep` column in `starbucks_drinks_data` was used to create new variables-- one for milk type and one for size. First, the column `milk_type` was developed bt extracting the type of milk from the `beverage_prep` column. Drinks without any milk intentionally had `NA` in this column. A for loop was used to iterate through each observation in the `beverage_prep` column, and if statements were used to identify the type of milk and add it to the `milk_type` column for each observation. The column `size` was added by extracting the size of drink from the `beverage_prep` column. A for loop can was to iterate through each observation in the `beverage_prep` column, and if statements were used to identify the beverage size and add it to the `size` column for each observation.
 
+Finally, a new data frame entitled `starbucks_all_data` was created by joining the two existing data frames with the merge() function. The `beverage` and `food_item` variables were renamed to `item`, so the data frames could share this variable. Then, the two data frames were combined by the variables `item`, `calories`, `fat_g`, `carb_g`, `fiber_g`, and `protein_g`, having selected these variables upon entering the data sets into the merge() function.
 
+### Dunkin Donuts Data Cleaning and Preparation
+In the `0b_dunkin_data_preparation` R script, the dataset "dunkindonutsnutrition.csv" was read in, copied as `dunkin_donuts_data`, and then cleaned. First, the variable named were changed with the names function to remove parentheses and spaces. Additionally, the names were made lowercase for consistency. 
+
+A new variable, `item_type` was created as a factor. The factor "drink" was assigned to drinks (based on the `category` variable) and the factor "food" was assigned to food items. Variables corresponding to nutritional information were converted into numeric vectors, as they generally contained numeric values. Moreover, a new factor variable, `size`, was created to identify the size of each drink. The size was extracted from the `item` name using the grepl() function. Items that were not given a size were assigned a factor of "not applicable". 
+
+Finally, the data was filtered into two new datasets: `dunkin_donuts_drinks_data`, containing the drink observations; and `dunkin_donuts_food_data`, containing the food observations.
 
 ## Explorations
 
