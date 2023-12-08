@@ -100,7 +100,7 @@ Donuts,"Frozen Chocolate, Small",490,11,8,0,25,170,94,2,84,5,577
 Donuts,"Hazelnut Swirl Frozen Chocolate, Large",900,17,12,0,40,370,176,1,162,11,1063
 Donuts,"Hazelnut Swirl Frozen Chocolate, Medium",700,14,10,0,35,280,135,1,124,9,825
 Donuts,"Hazelnut Swirl Frozen Chocolate, Small",500,11,8,0,30,190,95,1,87,6,589
-Donuts,#All Caps Donut (Regional),280,11,4.5,0,0,290,40,1,20,4,300.5
+Donuts,All Caps Donut (Regional),280,11,4.5,0,0,290,40,1,20,4,300.5
 Donuts,Celebration Donut,520,37,18,0,25,310,42,1,24,3,559
 Donuts,Cherry Blossom Donut (Regional),270,11,4.5,0,0,280,38,1,16,4,286.5
 Donuts,Chocolate Frosted with Chocolate Sprinkles Donut (Regional),270,12,5,0,0,290,36,1,15,5,285
@@ -138,7 +138,7 @@ Frozen Coffee,"Frozen Dunkaccino, Small",510,13,9,0,25,180,94,2,83,5,597
 Frozen Coffee,"Frozen Vanilla Chai/Vanilla Spice, Large",790,14,10,0,20,240,160,0,151,9,942
 Frozen Coffee,"Frozen Vanilla Chai/Vanilla Spice, Medium",590,10,7,0,15,180,120,0,113,7,703
 Frozen Coffee,"Frozen Vanilla Chai/Vanilla Spice, Small",400,7,5,0,10,120,80,0,75,4,476
-Frozen Coffee,Limited Time Products – Frozen Coffee, , , , , , , , , , , 
+Frozen Coffee,Limited Time Products� Frozen Coffee, , , , , , , , , , , 
 Frozen Coffee,"Butter Pecan Swirl Frozen Coffee with Cream, Large",1160,40,22,1.5,125,480,191,0,181,11,1352
 Frozen Coffee,"Butter Pecan Swirl Frozen Coffee with Cream, Medium",890,31,17,1,100,370,147,0,139,8,1038
 Frozen Coffee,"Butter Pecan Swirl Frozen Coffee with Cream, Small",630,22,12,0.5,70,250,103,0,97,6,733
@@ -148,7 +148,7 @@ Frozen Coffee,"Butter Pecan Swirl Frozen Coffee with Skim Milk, Small",490,4.5,3
 Frozen Coffee,"Butter Pecan Swirl Frozen Coffee with Whole Milk, Large",930,11,7,0,40,430,195,0,185,11,1111
 Frozen Coffee,"Butter Pecan Swirl Frozen Coffee with Whole Milk, Medium",720,9,6,0,30,330,150,0,142,9,859
 Frozen Coffee,"Butter Pecan Swirl Frozen Coffee with Whole Milk, Small",510,8,4.5,0,25,220,105,0,98,6,606.5
-Frozen Coffee,Limited Time Products – Frozen Specialty, , , , , , , , , , , 
+Frozen Coffee,"Limited Time Products, Frozen Specialty", , , , , , , , , , , 
 Frozen Coffee,"Frozen Matcha Latte with Skim Milk, Large",480,0,0,0,<5,95,111,2,109,8,581
 Frozen Coffee,"Frozen Matcha Latte with Skim Milk, Medium",360,0,0,0,<5,70,83,1,82,6,436
 Frozen Coffee,"Frozen Matcha Latte with Skim Milk, Small",240,0,0,0,0,50,55,1,54,4,290
@@ -194,14 +194,14 @@ Hot Cappuccino,"Mocha Swirl Hot Cappuccino with Skim Milk, Small",150,0.5,0,0,0,
 Hot Cappuccino,"Mocha Swirl Hot Cappuccino with Whole Milk, Large",360,9,5,0,25,140,63,2,57,9,413
 Hot Cappuccino,"Mocha Swirl Hot Cappuccino with Whole Milk, Medium",270,7,4,0,20,110,48,2,43,7,310
 Hot Cappuccino,"Mocha Swirl Hot Cappuccino with Whole Milk, Small",180,4.5,2.5,0,10,70,32,1,29,5,206.5
-Hot Cappuccino,Limited Time Products – Hot Cappuccino, , , , , , , , , , , 
+Hot Cappuccino,Limited Time Products Hot Cappuccino, , , , , , , , , , , 
 Hot Cappuccino,"Butter Pecan Swirl Hot Cappuccino with Skim Milk, Large",310,0,0,0,<5,370,64,0,60,11,359
 Hot Cappuccino,"Butter Pecan Swirl Hot Cappuccino with Skim Milk, Medium",230,0,0,0,<5,280,48,0,45,9,266
 Hot Cappuccino,"Butter Pecan Swirl Hot Cappuccino with Skim Milk, Small",150,0,0,0,<5,190,32,0,30,6,174
 Hot Cappuccino,"Butter Pecan Swirl Hot Cappuccino with Whole Milk, Large",370,8,4.5,0,25,370,63,0,60,11,423.5
 Hot Cappuccino,"Butter Pecan Swirl Hot Cappuccino with Whole Milk, Medium",280,6,3.5,0,20,280,47,0,45,8,320.5
 Hot Cappuccino,"Butter Pecan Swirl Hot Cappuccino with Whole Milk, Small",190,4,2.5,0,15,190,32,0,30,5,217.5
-Hot Chocolate,"Box ‘O Joe, Hot Chocolate",220,7,6,0,0,210,40,2,32,2,256
+Hot Chocolate,"Box of Joe, Hot Chocolate",220,7,6,0,0,210,40,2,32,2,256
 Hot Chocolate,"Dunkaccino, Extra Large",540,23,19,0,10,510,80,1,58,4,613
 Hot Chocolate,"Dunkaccino, Large",490,21,17,0,10,470,73,1,53,4,556
 Hot Chocolate,"Dunkaccino, Medium",350,15,12,0,<5,340,52,1,38,3,397
@@ -229,7 +229,7 @@ Hot Chocolate,"Salted Caramel Hot Chocolate, Extra Large",510,17,15,0,0,750,87,2
 Hot Chocolate,"Salted Caramel Hot Chocolate, Large",420,14,13,0,0,620,71,2,57,4,486
 Hot Chocolate,"Salted Caramel Hot Chocolate, Medium",310,10,9,0,0,450,52,1,42,3,358
 Hot Chocolate,"Salted Caramel Hot Chocolate, Small",210,7,6,0,0,320,36,1,29,2,243
-Hot Coffee,Box ‘O Joe,5,0,0,0,0,5,0,0,0,0,5
+Hot Coffee,Box of Joe,5,0,0,0,0,5,0,0,0,0,5
 Hot Coffee,"Cafe Au Lait with Skim Milk, Large",90,0,0,0,<5,110,12,0,12,9,93
 Hot Coffee,"Cafe Au Lait with Skim Milk, Medium",70,0,0,0,<5,80,9,0,9,7,72
 Hot Coffee,"Cafe Au Lait with Skim Milk, Small",45,0,0,0,0,55,6,0,6,4,47
@@ -671,20 +671,20 @@ Iced Tea,"Sweet Tea Blueberry Flavored, Small",170,0,0,0,0,15,43,0,40,0,210
 Iced Tea,"Sweet Tea Raspberry Flavored, Large",330,0,0,0,0,30,86,0,81,0,411
 Iced Tea,"Sweet Tea Raspberry Flavored, Medium",250,0,0,0,0,20,65,0,60,0,310
 Iced Tea,"Sweet Tea Raspberry Flavored, Small",170,0,0,0,0,15,43,0,40,0,210
-Dunkin’ Refreshers,"Peach Passion Fruit Dunkin’ Refreshers, Large",180,0,0,0,0,20,43,0,39,1,218
-Dunkin’ Refreshers,"Peach Passion Fruit Dunkin’ Refreshers, Medium",130,0,0,0,0,15,32,0,29,1,158
-Dunkin’ Refreshers,"Peach Passion Fruit Dunkin’ Refreshers, Small",90,0,0,0,0,10,21,0,20,0,110
-Dunkin’ Refreshers,"Strawberry Dragonfruit Dunkin’ Refreshers, Large",170,0,0,0,0,20,39,0,37,1,206
-Dunkin’ Refreshers,"Strawberry Dragonfruit Dunkin’ Refreshers, Medium",130,0,0,0,0,15,29,0,27,1,156
-Dunkin’ Refreshers,"Strawberry Dragonfruit Dunkin’ Refreshers, Small",80,0,0,0,0,10,19,0,18,0,98
+Dunkin’ Refreshers,"Peach Passion Fruit Dunkin Refreshers, Large",180,0,0,0,0,20,43,0,39,1,218
+Dunkin’ Refreshers,"Peach Passion Fruit Dunkin Refreshers, Medium",130,0,0,0,0,15,32,0,29,1,158
+Dunkin’ Refreshers,"Peach Passion Fruit Dunkin Refreshers, Small",90,0,0,0,0,10,21,0,20,0,110
+Dunkin’ Refreshers,"Strawberry Dragonfruit Dunkin Refreshers, Large",170,0,0,0,0,20,39,0,37,1,206
+Dunkin’ Refreshers,"Strawberry Dragonfruit Dunkin Refreshers, Medium",130,0,0,0,0,15,29,0,27,1,156
+Dunkin’ Refreshers,"Strawberry Dragonfruit Dunkin Refreshers, Small",80,0,0,0,0,10,19,0,18,0,98
 Dunkin’ Refreshers,"Butter Pecan Swirl Frozen Chocolate, Large",900,17,13,0,40,570,175,1,162,12,1063
 Dunkin’ Refreshers,"Butter Pecan Swirl Frozen Chocolate, Medium",700,14,10,0,30,430,134,1,124,9,825
 Dunkin’ Refreshers,"Butter Pecan Swirl Frozen Chocolate, Small",500,11,8,0,25,290,95,1,87,6,589
 Kolache,Kolache (Regional),390,23,7,0,60,1020,31,1,7,15,389
 Kolache,Kosher Beyond Sausage Sandwich,510,26,10,0,185,810,39,2,3,27,496
 Kolache,Kosher Beyond Sausage Wake-Up Wrap,280,17,8,0,105,500,15,1,1,15,274
-Kolache,Kosher Big n’ Toasted,610,37,10,0,340,1260,44,0,3,24,599
-Kolache,Kosher Dunkin’ Double Veggie Sausage Sandwich,600,18,6,0,180,1460,74,6,8,37,577
+Kolache,Kosher Big n Toasted,610,37,10,0,340,1260,44,0,3,24,599
+Kolache,Kosher Dunkin Double Veggie Sausage Sandwich,600,18,6,0,180,1460,74,6,8,37,577
 Kolache,Kosher Egg and Cheese on an English Muffin,340,14,5,0,180,600,38,1,3,14,334
 Kolache,Kosher Egg and Cheese Wake Up Wrap,170,10,4,0,95,410,14,0,1,7,168
 Kolache,Kosher Grilled Cheese (Regional),420,23,12,0,55,840,36,0,3,17,418
@@ -720,7 +720,7 @@ Sandwiches,"Bacon, Egg and Cheese on English Muffin",400,19,7,0,190,840,39,1,4,1
 Sandwiches,"Bacon, Egg and Cheese Wake-Up Wrap",220,13,5,0,105,590,15,0,1,10,216
 Sandwiches,Beyond Sausage Sandwich,510,26,10,0,185,820,40,2,3,26,497
 Sandwiches,Beyond Sausage Wake Up Wrap,280,18,7,0,100,500,15,1,1,14,274
-Sandwiches,Big n’ Toasted (Regional),600,36,11,0,360,1190,41,0,4,27,588
+Sandwiches,Big n Toasted (Regional),600,36,11,0,360,1190,41,0,4,27,588
 Sandwiches,"Biscuit, Bacon, Egg and Cheese (Regional)",490,31,15,0,195,1210,35,1,3,17,491
 Sandwiches,Chicken Biscuit (Regional),460,22,11,0,45,1080,46,1,3,21,453
 Sandwiches,Chicken Croissant Sandwich (Regional),650,36,14,0,65,1240,55,2,9,28,645
@@ -773,9 +773,9 @@ Soft Serve,"Extra Thick Shake, Chocolate",610,20,13,0.5,70,320,92,3,85,19,689
 Soft Serve,"Extra Thick Shake, Coffee",460,19,12,0.5,70,310,55,1,51,18,505
 Soft Serve,"Extra Thick Shake, Vanilla",450,19,12,0.5,70,300,54,1,51,18,495
 Soft Serve,Frozen Coffee Float,360,15,9,0.5,55,170,50,1,47,8,408
-Soft Serve,M&M’s Mix-In,650,27,17,0.5,60,270,88,3,82,16,733
+Soft Serve,M&M� Mix-In,650,27,17,0.5,60,270,88,3,82,16,733
 Soft Serve,OREO Mix-In,510,21,11,0.5,55,350,70,2,55,14,562
 Soft Serve,Soft Serve Cone,260,9,6,0,35,160,35,1,27,9,284
 Soft Serve,Strawberry Coolatta Float,420,12,8,0,50,210,68,1,64,11,481
 Hash Browns,Hash Browns,130,6,1,0,0,420,12,2,0,5,126
-Dunkin’ Bowls,Egg White Bowl,250,11,4,0,15,490,20,0,3,14,243
+Dunkin� Bowls,Egg White Bowl,250,11,4,0,15,490,20,0,3,14,243
