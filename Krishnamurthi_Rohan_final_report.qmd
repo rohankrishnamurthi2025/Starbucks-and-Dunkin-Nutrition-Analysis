@@ -216,9 +216,29 @@ ANALYZE.
 
 #### Nutritional Content by Milk Type
 
-Another question I sought to answer is how the nutrition content of each drink varies by milk type. When people order drinks from coffee shops, there are many different ways they can customize their drink to their liking. Thus, I found it important to analyze nutrition by milk preference. For this analysis, I measured the fat, sugar, calories, and then protein of drinks having grouped them by milk type. This was done by creating boxplots, with `milk_type` being the categorical variable, and then `calories`, `fat_g`, `sugar_g` and then `protein_g` being the continuous variables. 
+Another question I sought to answer is how the nutrition content of each drink varies by milk type. When people order drinks from coffee shops, there are many different ways they can customize their drink to their liking. Thus, I found it important to analyze nutrition by milk preference. For this analysis, I measured the fat, sugar, calories, and then protein of drinks having grouped them by milk type. I created boxplots to depict how these nutrients vary by each type of milk.
 
-The following graphs illustrate the average nutritional content of Starbucks drinks by type of milk.
+The following table and boxplots depict the average fat, sugar, calories, and protein for drinks of each type of milk at Starbucks. Observations with no milk were excluded from this analysis.
+
+```{r}
+
+starbucks_milk_table <- starbucks_drinks_data |> 
+  group_by(milk_type) |> 
+  summarize(fat = round(mean(fat_g, na.rm = TRUE)),
+            sugar = round(mean(sugars_g, na.rm = TRUE)),
+            calories = round(mean(calories, na.rm = TRUE)),
+            protein = round(mean(protein_g, na.rm = TRUE)),
+            ) |> 
+  rename("Protein content (g)" = protein, 
+         "Sugar content (g)" = sugar,
+         "Calories" = calories,
+         "Fat (g)" = fat,
+         "Milk Type" = milk_type)
+kable(starbucks_milk_table, caption = "Starbucks Drinks Average Nutritional Info by Type of Milk")
+
+
+```
+
 
 ![](figures/drinks_analysis/starbucks_milk_fat_boxplot.png){width="600"}
 
@@ -227,11 +247,104 @@ The following graphs illustrate the average nutritional content of Starbucks dri
 ![](figures/drinks_analysis/starbucks_milk_calories_boxplot.png){width="600"}
 
 ![](figures/drinks_analysis/starbucks_milk_protein_boxplot.png){width="600"}
+ANALYZE.
+
+The following table and boxplots reports the average fat, sugar, calories, and protein for drinks of each type of milk at Dunkin Donuts. Observations with no milk were excluded from this analysis.
+
+```{r}
+dunkin_milk_table <- dunkin_donuts_drinks_data |> 
+  filter(milk_type != "not applicable") |> 
+  group_by(milk_type) |> 
+  summarize(fat = round(mean(fat_g, na.rm = TRUE)),
+            sugar = round(mean(sugars_g, na.rm = TRUE)),
+            calories = round(mean(calories, na.rm = TRUE)),
+            protein = round(mean(protein_g, na.rm = TRUE)),
+            ) |> 
+  rename("Protein content (g)" = protein, 
+         "Sugar content (g)" = sugar,
+         "Calories" = calories,
+         "Fat (g)" = fat,
+         "Milk Type" = milk_type)
+kable(dunkin_milk_table, caption = "Dunkin Donuts Drinks Average Nutritional Info by Type of Milk")
+
+```
 
 
-The following graphs illustrate the average nutritional content of Dunkin Donuts drinks by type of milk.
+![](figures/drinks_analysis/dunkin_milk_fat_boxplot.png){width="600"}
+
+![](figures/drinks_analysis/dunkin_milk_sugar_boxplot.png){width="600"}
+
+![](figures/drinks_analysis/dunkin_milk_calories_boxplot.png){width="600"}
+
+![](figures/drinks_analysis/dunkin_milk_protein_boxplot.png){width="600"}
+
+Due to large overlap of boxes in the boxplots, as well as an abundance of outliers, I added density plots to better distinguish the nutritional information of each type of milk.
+
+![](figures/drinks_analysis/dunkin_milk_fat_density.png){width="600"}
+
+![](figures/drinks_analysis/dunkin_milk_sugar_density.png){width="600"}
+
+![](figures/drinks_analysis/dunkin_milk_calories_density.png){width="600"}
+
+![](figures/drinks_analysis/dunkin_milk_protein_density.png){width="600"}
+
+ANALYZE.
 
 
+#### New metrics to assess healthiness of drinks
+
+In the previous section, I analyzed which typs of beverage had high (or low) contents of specific nutrients. There are more nuanced ways to assess the "healthiness" of a drink. In this section, I am to incorporate multiple variables to develop new ways to analyze healthiness.
+
+##### Beverages rich in protein
+
+First, I sought to determine which types of beverages were richest in protein while lowest unhealthy quantities, such as calories and fat. I compared the ratio of protein to calories for each drink type. Nevertheless, protein content can also be compared to sugar, fat, or other quantities for different metrics.
+
+In the following table and scatterplot, I compare the ratio of grams of protein to calories for types of drinks at Starbucks. Due to difficulty in distinguishing data points in the scatterplot, I added faceted scatterplots as well.
+
+```{r}
+starbucks_protein_table <- starbucks_drinks_data |> 
+  group_by(beverage_category) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE)),
+            calories = round(mean(calories, na.rm = TRUE)),
+            ratio = round(protein/calories, digits = 4)) |> 
+  rename("Protein content (g)" = protein, 
+         "Calories" = calories,
+         "Ratio of protein (g) to calories" = ratio,
+         "Drink Category" = beverage_category)
+kable(starbucks_protein_table, caption = "Starbucks Protein to Calories")
+```
+
+![](figures/drinks_analysis/starbucks_drinks_protein_to_calories.png){width="600"}
+
+![](figures/drinks_analysis/starbucks_drinks_protein_to_calories_faceted.png){width="600"}
+
+ANALYZE
+
+In the following table and scatterplot, I compare the same quantities for drinks at Dunkin Donuts. A single scatterplot and faceted scatterplots were included as well.
+
+```{r}
+dunkin_protein_table <- dunkin_donuts_drinks_data |> 
+  group_by(category) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE)),
+            calories = round(mean(calories, na.rm = TRUE)),
+            ratio = round(protein/calories, digits = 4)) |> 
+  rename("Protein content (g)" = protein, 
+         "Calories" = calories,
+         "Ratio of protein (g) to calories" = ratio,
+         "Drink Category" = category)
+kable(starbucks_protein_table, caption = "Protein to Calories, Dunkin ")
+```
+
+
+![](figures/drinks_analysis/dunkin_drinks_protein_to_calories.png){width="600"}
+
+![](figures/drinks_analysis/dunkin_drinks_protein_to_calories_faceted.png){width="600"}
+
+ANALYZE
+
+##### Beverages rich in vitamins
+
+Another way I sought to assess how healthy beverages were was by assessing their overall vitamin and mineral contents. Unfortunately, this information was not available for the Dunkin Donuts drinks data. The Starbucks drinks data contains information regarding vitamin A, vitamin C, calcium, and iron. For this analysis, I took the sum of the listed percent daily value of each of these nutrients, and divided by four. This calculation results in an estimation of each drink type's percent daily value of all vitamins and minerals that one should consume in a day (i.e. how much of your daily vitamin and mineral content are you getting through each drink). The following table and figures contain information regarding the average vitamin/mineral percent daily value for each drink type and Starbucks.
 
 ## Conclusions
 

@@ -136,12 +136,6 @@ for (i in 1:(length(dunkin_donuts_data$item))){
   }
 }
 
-##Convert remaining milk types to "not applicable"
-for (i in 1:(length(dunkin_donuts_data$item))){
-  if (is.na(dunkin_donuts_data$milk_type[i])){
-    dunkin_donuts_data$milk_type[i] <- "not applicable"}
-}
-
 dunkin_donuts_data$milk_type <- as.factor(dunkin_donuts_data$milk_type)
 
 
