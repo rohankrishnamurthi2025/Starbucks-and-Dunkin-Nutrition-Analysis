@@ -1,4 +1,4 @@
-
+##STARBUCKS DATA PREPARATION
 #Load packages and data sets
 library(magick)
 library(tidyverse)
