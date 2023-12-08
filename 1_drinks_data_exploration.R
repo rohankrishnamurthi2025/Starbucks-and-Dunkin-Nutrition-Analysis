@@ -333,7 +333,7 @@ starbucks_protein_table <- starbucks_drinks_data |>
          "Drink Category" = beverage_category)
 kable(starbucks_protein_table, caption = "Protein to Calories, Starbucks ")
 
-## i: Dunkin
+## ii: Dunkin
 dunkin_protein_table <- dunkin_donuts_drinks_data |> 
   group_by(category) |> 
   summarize(protein = round(mean(protein_g, na.rm = TRUE)),
@@ -364,4 +364,21 @@ ggsave(filename = ("figures/drinks_analysis/dunkin_drinks_protein_to_calories.pn
 
 
 #C2: highest vitamin content
+##i: Starbucks
+starbucks_vitamin_table <- starbucks_drinks_data |> 
+  group_by(beverage_category) |> 
+  summarize(vitamin_a = round(mean(vitamin_a_percent_dv, na.rm = TRUE)),
+            vitamin_c = round(mean(vitamin_c_percent_dv, na.rm = TRUE)),
+            calcium = round(mean(calcium_percent_dv, na.rm = TRUE)),
+            iron = round(mean(iron_percent_dv, na.rm = TRUE)),
+            ratio = round((iron + calcium + vitamin_a + vitamin_c)/4, digits = 4)) |> 
+  rename("Vitamin A (%DV)" = vitamin_a, 
+         "Vitamin C (%DV)" = vitamin_c,
+         "Calcium (%DV)" = calcium,
+         "Iron (%DV)" = iron,
+         "Average %DV of Vitamins and Minerals" = ratio,
+         "Drink Category" = beverage_category)
+kable(starbucks_vitamin_table, caption = "Average Percent Daily Value of Vitamins and Minerals, Starbucks ")
+
+
 

@@ -344,7 +344,33 @@ ANALYZE
 
 ##### Beverages rich in vitamins
 
-Another way I sought to assess how healthy beverages were was by assessing their overall vitamin and mineral contents. Unfortunately, this information was not available for the Dunkin Donuts drinks data. The Starbucks drinks data contains information regarding vitamin A, vitamin C, calcium, and iron. For this analysis, I took the sum of the listed percent daily value of each of these nutrients, and divided by four. This calculation results in an estimation of each drink type's percent daily value of all vitamins and minerals that one should consume in a day (i.e. how much of your daily vitamin and mineral content are you getting through each drink). The following table and figures contain information regarding the average vitamin/mineral percent daily value for each drink type and Starbucks.
+Another way I sought to assess how healthy beverages were was by assessing their overall vitamin and mineral contents. Unfortunately, this information was not available for the Dunkin Donuts drinks data. The Starbucks drinks data contains information regarding vitamin A, vitamin C, calcium, and iron. For this analysis, I took the sum of the listed percent daily value of each of these nutrients, and divided by four. This calculation results in an estimation of each drink type's percent daily value of all vitamins and minerals that one should consume in a day (i.e. how much of your daily vitamin and mineral content are you getting through each drink). The following table  contains information regarding the average vitamin/mineral percent daily value for each drink type and Starbucks.
+
+```{r}
+
+starbucks_vitamin_table <- starbucks_drinks_data |> 
+  group_by(beverage_category) |> 
+  summarize(vitamin_a = round(mean(vitamin_a_percent_dv, na.rm = TRUE)),
+            vitamin_c = round(mean(vitamin_c_percent_dv, na.rm = TRUE)),
+            calcium = round(mean(calcium_percent_dv, na.rm = TRUE)),
+            iron = round(mean(iron_percent_dv, na.rm = TRUE)),
+            ratio = round((iron + calcium + vitamin_a + vitamin_c)/4, digits = 4)) |> 
+  rename("Vitamin A (%DV)" = vitamin_a, 
+         "Vitamin C (%DV)" = vitamin_c,
+         "Calcium (%DV)" = calcium,
+         "Iron (%DV)" = iron,
+         "Average %DV of Vitamins and Minerals" = ratio,
+         "Drink Category" = beverage_category)
+kable(starbucks_vitamin_table, caption = "Average Percent Daily Value of Vitamins and Minerals, Starbucks ")
+
+```
+
+ANALYZE
+
+
+### Summary of major findings
+
+In this section of the EDA, I compared nutritional information of drinks at Starbucks and Dunkin Donuts.
 
 ## Conclusions
 
