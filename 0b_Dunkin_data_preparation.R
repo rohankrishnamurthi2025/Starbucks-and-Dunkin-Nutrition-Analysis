@@ -78,6 +78,7 @@ for (i in 1:(length(dunkin_donuts_data$item))){
 
 dunkin_donuts_data$item_type <- as.factor(dunkin_donuts_data$item_type)
 
+
 #Convert nutritional info variables into numeric vectors
 dunkin_donuts_data$calories <- as.numeric(dunkin_donuts_data$calories)
 dunkin_donuts_data$fat_g <- as.numeric(dunkin_donuts_data$fat_g)
@@ -110,13 +111,40 @@ for (i in 1:(length(dunkin_donuts_data$item))){
   }
   
 
-##Convert remaining sizes to the character "not applicable"
+##Convert remaining sizes to "not applicable"
 for (i in 1:(length(dunkin_donuts_data$item))){
   if (is.na(dunkin_donuts_data$size[i])){
     dunkin_donuts_data$size[i] <- "not applicable"}
 }
 
 dunkin_donuts_data$size <- as.factor(dunkin_donuts_data$size)
+
+
+#Add variable to record type of milk (as a factor) of item
+dunkin_donuts_data <- dunkin_donuts_data |> 
+  mutate(milk_type = NA)
+
+for (i in 1:(length(dunkin_donuts_data$item))){
+  if (grepl("Skim Milk", dunkin_donuts_data$item[i], fixed = TRUE)){
+    dunkin_donuts_data$milk_type[i] <- "skim"
+  }
+  if (grepl("Whole Milk", dunkin_donuts_data$item[i], fixed = TRUE)){
+    dunkin_donuts_data$milk_type[i] <- "whole"
+  }
+  if (grepl("Cream", dunkin_donuts_data$item[i], fixed = TRUE)){
+    dunkin_donuts_data$milk_type[i] <- "cream"
+  }
+}
+
+##Convert remaining milk types to "not applicable"
+for (i in 1:(length(dunkin_donuts_data$item))){
+  if (is.na(dunkin_donuts_data$milk_type[i])){
+    dunkin_donuts_data$milk_type[i] <- "not applicable"}
+}
+
+dunkin_donuts_data$milk_type <- as.factor(dunkin_donuts_data$milk_type)
+
+
 
 #Convert category variable into factor
 dunkin_donuts_data$category <- as.factor(dunkin_donuts_data$category)

@@ -1,186 +1,186 @@
-category,item,calories,fat_g,saturated_fat_g,trans_fat_g,cholesterol_mg,sodium_mg,carb_g,fiber_g,sugars_g,protein_g,weight_watcher_points,item_type,size
-Donuts,Apple Spice Donut,230,10,4,0,0,300,31,1,10,4,240,food,not applicable
-Donuts,Apple Crumb Donut,290,11,4.5,0,0,310,44,1,22,5,311.5,food,not applicable
-Donuts,Apple Fritter,510,28,12,0,0,470,57,2,24,6,540,food,not applicable
-Donuts,Apple Stick,470,30,14,0,20,450,44,1,21,4,501,food,not applicable
-Donuts,Apple Streusel Donut (Regional),310,12,4.5,0,0,310,47,1,24,5,333.5,food,not applicable
-Donuts,Bavarian Kreme Donut,240,11,4,0,0,310,31,1,11,4,251,food,not applicable
-Donuts,Bismark,480,22,9,0,0,470,63,1,34,6,517,food,not applicable
-Donuts,Boston Kreme Donut,270,11,4.5,0,0,320,39,1,18,5,287.5,food,not applicable
-Donuts,Butternut Donut,430,21,10,0,20,320,57,1,34,4,470,food,not applicable
-Donuts,Chocolate Butternut Donut,440,23,10,0,0,420,55,2,32,4,478,food,not applicable
-Donuts,Chocolate Coconut Donut (Regional),420,23,11,0,0,420,48,1,26,4,453,food,not applicable
-Donuts,Chocolate Creme Donut,290,14,6,0,0,300,36,1,14,5,305,food,not applicable
-Donuts,Chocolate Creme Stick (Regional),460,23,9,0,0,450,58,2,33,6,496,food,not applicable
-Donuts,Chocolate Dipped French Cruller,280,15,7,0,50,150,33,0,20,3,304,food,not applicable
-Donuts,Chocolate Frosted Cake Donut,360,20,9,0,20,340,41,1,21,4,386,food,not applicable
-Donuts,Chocolate Frosted Donut,260,11,4.5,0,0,290,34,1,13,4,273.5,food,not applicable
-Donuts,Chocolate Frosted with Sprinkles Donut,270,12,5,0,0,290,36,1,15,4,286,food,not applicable
-Donuts,Chocolate Headlight Donut,310,14,6,0,0,310,41,1,19,5,330,food,not applicable
-Donuts,Chocolate Long John,320,15,6,0,0,400,41,1,16,6,336,food,not applicable
-Donuts,Cinnamon Donut,330,20,9,0,20,320,34,1,13,4,348,food,not applicable
-Donuts,Cinnamon Stick,430,30,14,0,20,390,34,1,13,4,453,food,not applicable
-Donuts,Coconut Donut,410,21,11,0,20,320,50,1,28,4,445,food,not applicable
-Donuts,Coffee Roll,390,19,8,0,0,440,48,2,17,7,408,food,not applicable
-Donuts,Creme Delight Donut (Regional),330,16,6,0,0,310,44,1,24,5,355,food,not applicable
-Donuts,Double Chocolate Donut,370,22,10,0,0,440,40,1,19,4,395,food,not applicable
-Donuts,Dulce de Leche Donut (Regional),270,11,4.5,0,0,280,37,1,13,5,282.5,food,not applicable
-Donuts,Eclair,370,16,6,0,0,470,50,2,23,6,393,food,not applicable
-Donuts,French Apple Donut (Regional),270,10,4,0,0,310,40,1,19,4,289,food,not applicable
-Donuts,French Cruller,230,14,7,0,50,135,21,0,10,3,244,food,not applicable
-Donuts,Frosted Vanilla Creme Donut,330,16,6,0,0,310,44,1,24,5,355,food,not applicable
-Donuts,Glazed Blueberry Donut,350,18,7,0,30,380,44,1,21,4,374,food,not applicable
-Donuts,Glazed Chocolate Donut,360,22,10,0,0,420,39,1,18,4,384,food,not applicable
-Donuts,Glazed Chocolate Stick,410,25,10,0,0,480,42,2,20,4,436,food,not applicable
-Donuts,Glazed Donut,240,11,4.5,0,0,270,33,1,13,4,253.5,food,not applicable
-Donuts,Glazed Jelly Donut,280,10,4,0,0,290,44,1,21,4,301,food,not applicable
-Donuts,Glazed Jelly Stick,530,30,14,0,20,430,61,1,34,4,574,food,not applicable
-Donuts,Glazed Lemon Donut (Regional),270,10,4,0,0,310,40,1,19,4,289,food,not applicable
-Donuts,Glazed Stick,460,30,14,0,20,390,43,1,21,4,491,food,not applicable
-Donuts,Glazed Strawberry Donut,280,10,4,0,0,280,44,1,23,4,303,food,not applicable
-Donuts,Guava Donut (Regional),240,10,4,0,0,280,32,1,12,4,252,food,not applicable
-Donuts,Indy Creme Donut (Regional),330,16,6,0,0,310,44,1,24,5,355,food,not applicable
-Donuts,Jelly Donut,250,10,4,0,0,290,36,1,13,4,263,food,not applicable
-Donuts,Jelly Stick,500,30,14,0,20,430,52,1,26,4,536,food,not applicable
-Donuts,Lemon Donut,230,10,4,0,0,310,31,1,10,4,240,food,not applicable
-Donuts,Lemon Stick,470,31,14,0,20,460,44,1,21,4,501,food,not applicable
-Donuts,Maple Creme Donut,290,14,5,0,0,290,38,1,18,4,309,food,not applicable
-Donuts,Maple Creme Stick,460,22,9,0,0,440,59,1,34,5,498,food,not applicable
-Donuts,Maple Frosted Donut,260,11,4.5,0,0,280,35,1,14,4,274.5,food,not applicable
-Donuts,Maple Long John Donut (Regional),320,15,6,0,0,400,42,1,18,5,339,food,not applicable
-Donuts,Maple Vanilla Creme Donut,330,15,6,0,0,300,45,1,25,4,357,food,not applicable
-Donuts,Marble Frosted Donut (Regional),270,11,4.5,0,0,290,37,1,17,4,287.5,food,not applicable
-Donuts,New Yorker Donut (Regional),330,16,6,0,0,310,44,1,24,5,355,food,not applicable
-Donuts,Old Fashioned Donut,310,19,9,0,20,320,30,1,10,4,325,food,not applicable
-Donuts,Peanut Donut,470,27,10,0,20,320,50,2,26,8,498,food,not applicable
-Donuts,Plain Stick,410,30,14,0,20,390,31,1,10,4,430,food,not applicable
-Donuts,Powdered Donut,330,20,9,0,20,320,34,1,14,4,349,food,not applicable
-Donuts,Powdered Stick,440,31,14,0,20,390,36,1,15,4,465,food,not applicable
-Donuts,Sour Cream Donut,360,17,7,0,10,360,49,1,25,4,388,food,not applicable
-Donuts,Strawberry Frosted Donut,260,11,4.5,0,0,280,35,1,14,4,274.5,food,not applicable
-Donuts,Strawberry Frosted with Sprinkles Donut,270,12,5,0,0,280,37,1,16,4,287,food,not applicable
-Donuts,Sugared Donut,210,11,4.5,0,0,270,24,1,5,4,215.5,food,not applicable
-Donuts,Sugared Stick,420,30,14,0,20,390,34,1,13,4,443,food,not applicable
-Donuts,Taillight Donut,320,15,6,0,0,310,41,1,21,4,343,food,not applicable
-Donuts,Toasted Coconut Donut,430,22,11,0,20,360,52,3,29,5,465,food,not applicable
-Donuts,Vanilla Creme Donut,300,15,6,0,0,290,37,1,18,4,320,food,not applicable
-Donuts,Vanilla Frosted Donut,260,11,4.5,0,0,280,35,1,14,4,274.5,food,not applicable
-Donuts,Vanilla Frosted with Sprinkles Donut,270,11,4.5,0,0,280,38,1,16,4,286.5,food,not applicable
-Donuts,Vanilla Headlight Donut,310,15,6,0,0,310,41,1,21,4,333,food,not applicable
-Donuts,Vanilla Long John,320,15,6,0,0,400,42,1,17,5,338,food,not applicable
-Donuts,"Caramel Swirl Frozen Chocolate, Large",900,17,12,0,40,380,176,1,165,11,1066,food,large
-Donuts,"Caramel Swirl Frozen Chocolate, Medium",700,14,10,0,35,290,135,1,126,9,827,food,medium
-Donuts,"Caramel Swirl Frozen Chocolate, Small",500,11,8,0,30,200,95,1,88,6,590,food,small
-Donuts,"French Vanilla Swirl Frozen Chocolate, Large",900,17,12,0,40,370,175,1,162,11,1063,food,large
-Donuts,"French Vanilla Swirl Frozen Chocolate, Medium",700,14,10,0,35,280,135,1,124,9,825,food,medium
-Donuts,"French Vanilla Swirl Frozen Chocolate, Small",500,11,8,0,30,190,95,1,87,6,589,food,small
-Donuts,"Frozen Chocolate, Large",890,18,13,0,35,330,175,4,158,10,1051,food,large
-Donuts,"Frozen Chocolate, Medium",690,15,10,0,30,250,134,3,121,7,814,food,medium
-Donuts,"Frozen Chocolate, Small",490,11,8,0,25,170,94,2,84,5,577,food,small
-Donuts,"Hazelnut Swirl Frozen Chocolate, Large",900,17,12,0,40,370,176,1,162,11,1063,food,large
-Donuts,"Hazelnut Swirl Frozen Chocolate, Medium",700,14,10,0,35,280,135,1,124,9,825,food,medium
-Donuts,"Hazelnut Swirl Frozen Chocolate, Small",500,11,8,0,30,190,95,1,87,6,589,food,small
-Donuts,All Caps Donut (Regional),280,11,4.5,0,0,290,40,1,20,4,300.5,food,not applicable
-Donuts,Celebration Donut,520,37,18,0,25,310,42,1,24,3,559,food,not applicable
-Donuts,Cherry Blossom Donut (Regional),270,11,4.5,0,0,280,38,1,16,4,286.5,food,not applicable
-Donuts,Chocolate Frosted with Chocolate Sprinkles Donut (Regional),270,12,5,0,0,290,36,1,15,5,285,food,not applicable
-Donuts,Flyers Donut (Regional),280,11,4.5,0,0,290,40,1,20,4,300.5,food,not applicable
-Donuts,Pittsburgh Creme Donut (Regional),350,16,7,0,0,310,47,1,26,5,378,food,not applicable
-Kolache,Kolache (Regional),390,23,7,0,60,1020,31,1,7,15,389,food,not applicable
-Kolache,Kosher Beyond Sausage Sandwich,510,26,10,0,185,810,39,2,3,27,496,food,not applicable
-Kolache,Kosher Beyond Sausage Wake-Up Wrap,280,17,8,0,105,500,15,1,1,15,274,food,not applicable
-Kolache,Kosher Big n Toasted,610,37,10,0,340,1260,44,0,3,24,599,food,not applicable
-Kolache,Kosher Dunkin Double Veggie Sausage Sandwich,600,18,6,0,180,1460,74,6,8,37,577,food,not applicable
-Kolache,Kosher Egg and Cheese on an English Muffin,340,14,5,0,180,600,38,1,3,14,334,food,not applicable
-Kolache,Kosher Egg and Cheese Wake Up Wrap,170,10,4,0,95,410,14,0,1,7,168,food,not applicable
-Kolache,Kosher Grilled Cheese (Regional),420,23,12,0,55,840,36,0,3,17,418,food,not applicable
-Kolache,Kosher Grilled Cheese with Veggie Bacon (Regional),480,27,12,0,55,1060,38,0,3,19,476,food,not applicable
-Kolache,Kosher Power Breakfast Sandwich,360,16,6,0,25,800,30,6,5,26,345,food,not applicable
-Kolache,Kosher Tuna Melt on a Croissant,630,42,15,0,65,820,38,1,5,24,626,food,not applicable
-Kolache,Kosher Tuna Salad on a Plain Bagel,510,17,3,0,45,1060,64,4,7,24,496,food,not applicable
-Kolache,Kosher Veggie Bacon Egg and Cheese on a Plain Bagel,510,17,5,0,180,1170,68,4,7,21,501,food,not applicable
-Kolache,Kosher Veggie Bacon Wake-Up Wrap,200,12,4.5,0,95,520,15,0,1,8,197.5,food,not applicable
-Kolache,Kosher Veggie Sausage Egg and Cheese on a Croissant,570,33,13,0,180,840,44,2,6,23,566,food,not applicable
-Kolache,Kosher Veggie Sausage Wake-Up Wrap,210,11,4,0,95,540,16,1,1,11,204,food,not applicable
-Muffins,Blueberry Muffin,460,15,3,0,60,390,77,1,44,6,501,food,not applicable
-Muffins,Chocolate Chip Muffin,550,21,6,0,65,400,85,2,49,7,598,food,not applicable
-Muffins,Coffee Cake Muffin,590,24,8,0,65,370,88,2,51,7,642,food,not applicable
-Muffins,Corn Muffin,460,16,3,0,70,670,73,1,30,7,486,food,not applicable
-Muffins,Butternut Munchkins,90,4,2,0,NA,70,12,0,7,1,98,food,not applicable
-Muffins,Cinnamon Munchkins,60,3.5,1.5,0,NA,70,6,0,2,1,62.5,food,not applicable
-Muffins,Glazed Blueberry Munchkins,70,3.5,2,0,NA,65,8,0,4,1,75,food,not applicable
-Muffins,Glazed Chocolate Munchkins,60,3.5,1.5,0,0,80,8,0,4,1,64.5,food,not applicable
-Muffins,Glazed Munchkins,60,3,1.5,0,0,60,7,0,3,1,63.5,food,not applicable
-Muffins,Glazed Old Fashioned Munchkins,70,3.5,1.5,0,NA,70,8,0,4,1,74.5,food,not applicable
-Muffins,Jelly Munchkins,60,3,1.5,0,0,65,8,0,3,1,63.5,food,not applicable
-Muffins,Old Fashioned Munchkins,60,3.5,1.5,0,NA,70,6,0,2,1,62.5,food,not applicable
-Muffins,Powdered Munchkins,60,3.5,1.5,0,NA,70,6,0,2,1,62.5,food,not applicable
-Muffins,Multigrain Brown Sugar Oatmeal with Dried Fruit Topping,300,2.5,0,0,0,250,65,6,36,6,330,food,not applicable
-Muffins,Biscuit (Regional),270,14,9,0,10,640,32,1,2,5,276,food,not applicable
-Muffins,English Muffin,190,2,0,0,0,270,35,1,3,6,187,food,not applicable
-Muffins,Multigrain Thin,150,4,0.5,0,0,220,24,4,3,6,147.5,food,not applicable
-Muffins,Plain Croissant,340,19,8,0,0,250,37,1,5,6,347,food,not applicable
-Sandwiches,"Bacon, Egg and Cheese on a Plain Bagel",520,18,6,0,190,1200,67,4,8,23,511,food,not applicable
-Sandwiches,"Bacon, Egg and Cheese on Croissant",560,36,14,0,190,820,41,1,6,18,562,food,not applicable
-Sandwiches,"Bacon, Egg and Cheese on English Muffin",400,19,7,0,190,840,39,1,4,18,393,food,not applicable
-Sandwiches,"Bacon, Egg and Cheese Wake-Up Wrap",220,13,5,0,105,590,15,0,1,10,216,food,not applicable
-Sandwiches,Beyond Sausage Sandwich,510,26,10,0,185,820,40,2,3,26,497,food,not applicable
-Sandwiches,Beyond Sausage Wake Up Wrap,280,18,7,0,100,500,15,1,1,14,274,food,not applicable
-Sandwiches,Big n Toasted (Regional),600,36,11,0,360,1190,41,0,4,27,588,food,not applicable
-Sandwiches,"Biscuit, Bacon, Egg and Cheese (Regional)",490,31,15,0,195,1210,35,1,3,17,491,food,not applicable
-Sandwiches,Chicken Biscuit (Regional),460,22,11,0,45,1080,46,1,3,21,453,food,not applicable
-Sandwiches,Chicken Croissant Sandwich (Regional),650,36,14,0,65,1240,55,2,9,28,645,food,not applicable
-Sandwiches,Double Sausage Breakfast Sandwich,900,54,19,0,265,1980,70,5,8,33,894,food,not applicable
-Sandwiches,Egg and Cheese on a Plain Bagel,460,13,5,0,175,1010,66,4,8,19,454,food,not applicable
-Sandwiches,Egg and Cheese on Croissant,500,31,13,0,175,640,40,1,6,15,504,food,not applicable
-Sandwiches,Egg and Cheese on English Muffin,340,15,5,0,175,650,38,1,4,14,335,food,not applicable
-Sandwiches,Egg and Cheese Wake-Up Wrap,180,10,4,0,95,470,14,0,1,7,178,food,not applicable
-Sandwiches,Grilled Cheese (Regional),430,24,11,0,50,960,37,0,3,17,427,food,not applicable
-Sandwiches,Grilled Cheese with Bacon (Regional),490,29,13,0,60,1140,38,0,4,21,486,food,not applicable
-Sandwiches,Grilled Cheese with Ham (Regional),460,25,12,0,60,1220,38,0,4,22,454,food,not applicable
-Sandwiches,"Ham, Egg and Cheese on a Plain Bagel",490,14,5,0,190,1270,67,4,8,24,479,food,not applicable
-Sandwiches,"Ham, Egg and Cheese on Croissant",530,32,13,0,190,900,40,1,6,19,530,food,not applicable
-Sandwiches,"Ham, Egg and Cheese on English Muffin",370,15,5,0,190,910,39,1,4,19,360,food,not applicable
-Sandwiches,"Ham, Egg and Cheese Wake-Up Wrap",190,11,4,0,100,600,15,0,1,9,186,food,not applicable
-Sandwiches,Ham and Cheese Rollups,280,13,6,0,40,1050,27,1,2,13,275,food,not applicable
-Sandwiches,Power Breakfast Sandwich,420,23,8,0,60,980,28,5,5,25,408,food,not applicable
-Sandwiches,"Sausage, Egg and Cheese on a Plain Bagel",680,34,12,0,220,1500,68,5,8,26,674,food,not applicable
-Sandwiches,"Sausage, Egg and Cheese on Croissant",720,52,20,0,220,1120,42,2,6,21,725,food,not applicable
-Sandwiches,"Sausage, Egg and Cheese on English Muffin",560,35,12,0,220,1140,40,2,4,21,555,food,not applicable
-Sandwiches,"Sausage, Egg and Cheese Wake-Up Wrap",290,21,8,0,120,710,15,1,1,10,289,food,not applicable
-Sandwiches,Sausage Biscuit (Regional),490,34,16,0,45,1120,32,1,2,13,495,food,not applicable
-Sandwiches,Spam Breakfast Sandwich,630,42,17,0,200,1210,41,1,6,20,633,food,not applicable
-Sandwiches,Turkey Sausage Sandwich on English Muffin,460,22,7,0,240,1120,39,1,4,26,445,food,not applicable
-Sandwiches,Veggie Egg White Sandwich on a Multigrain Thin,290,13,5,0,20,550,27,5,4,17,282,food,not applicable
-Sandwiches,Sweet Black Pepper Bacon Sandwich,650,41,17,0,205,850,46,1,11,23,655,food,not applicable
-Sandwiches,Sweet Black Pepper Bacon Wake-Up Wrap,260,16,7,0,110,490,17,0,3,12,258,food,not applicable
-Sandwiches,Sweet Black Pepper Snacking Bacon,190,12,4.5,0,35,500,10,0,9,10,193.5,food,not applicable
-Sandwiches,Cinnamon Raisin Bagel,320,1,0,0,0,510,67,4,13,11,322,food,not applicable
-Sandwiches,Everything Bagel,340,3,0.5,0,0,630,67,5,8,12,336.5,food,not applicable
-Sandwiches,Multigrain Bagel,380,8,1,0,0,550,63,8,8,15,374,food,not applicable
-Sandwiches,Plain Bagel,300,1,0,0,0,620,64,4,7,11,296,food,not applicable
-Sandwiches,Sesame Seed Bagel,350,5,1,0,0,630,64,5,7,12,346,food,not applicable
-Sandwiches,White Cheddar Bagel Twist,390,8,4.5,0,20,760,64,4,7,16,385.5,food,not applicable
-Sandwiches,Kosher Sweet Black Pepper Bacon Sandwich,670,43,16,0,185,970,49,2,11,21,676,food,not applicable
-Sandwiches,Kosher Sweet Black Pepper Bacon Wake-Up Wrap,280,17,7,0,105,580,19,1,3,12,278,food,not applicable
-Sandwiches,Kosher Veggie Egg White Sandwich on a Multigrain Thin,290,13,5,0,20,550,27,5,4,17,282,food,not applicable
-Sandwiches,Bacon and Cheese Rollups,370,22,9,0,55,1160,28,1,3,16,366,food,not applicable
-Sandwiches,Ham and Cheese Rollups,280,13,6,0,40,1050,27,1,2,13,275,food,not applicable
-Sandwiches,Classic Plain Cream Cheese Spread,120,12,8,0,40,200,3,0,3,2,129,food,not applicable
-Sandwiches,Garden Veggie Cream Cheese Spread,100,10,6,0,35,200,2,0,1,2,105,food,not applicable
-Sandwiches,Strawberry Cream Cheese Spread,130,10,6,0,30,100,9,0,8,2,142,food,not applicable
-Sandwiches,Egg and Cheese DD Smart Wake-Up Wrap,180,10,4,0,95,470,14,0,1,7,178,food,not applicable
-Sandwiches,"Ham, Egg and Cheese DD Smart Wake-Up Wrap",190,11,4,0,100,600,15,0,1,9,186,food,not applicable
-Sandwiches,Turkey Sausage DD Smart Wake Up Wrap,240,14,5,0,125,700,15,0,1,13,233,food,not applicable
-Sandwiches,Turkey Sausage Wake Up Wrap,240,15,6,0,115,680,15,0,1,11,236,food,not applicable
-Sandwiches,Veggie Egg White DD Smart Wake-Up Wrap,150,7,3,0,20,490,15,1,1,7,147,food,not applicable
-Sandwiches,Veggie Egg White Wake-Up Wrap,190,10,4.5,0,20,390,15,1,1,9,186.5,food,not applicable
-Soft Serve,"Extra Thick Shake, Chocolate",610,20,13,0.5,70,320,92,3,85,19,689,food,not applicable
-Soft Serve,"Extra Thick Shake, Coffee",460,19,12,0.5,70,310,55,1,51,18,505,food,not applicable
-Soft Serve,"Extra Thick Shake, Vanilla",450,19,12,0.5,70,300,54,1,51,18,495,food,not applicable
-Soft Serve,Frozen Coffee Float,360,15,9,0.5,55,170,50,1,47,8,408,food,not applicable
-Soft Serve,M&M Mix-In,650,27,17,0.5,60,270,88,3,82,16,733,food,not applicable
-Soft Serve,OREO Mix-In,510,21,11,0.5,55,350,70,2,55,14,562,food,not applicable
-Soft Serve,Soft Serve Cone,260,9,6,0,35,160,35,1,27,9,284,food,not applicable
-Soft Serve,Strawberry Coolatta Float,420,12,8,0,50,210,68,1,64,11,481,food,not applicable
-Hash Browns,Hash Browns,130,6,1,0,0,420,12,2,0,5,126,food,not applicable
+category,item,calories,fat_g,saturated_fat_g,trans_fat_g,cholesterol_mg,sodium_mg,carb_g,fiber_g,sugars_g,protein_g,weight_watcher_points,item_type,size,milk_type
+Donuts,Apple Spice Donut,230,10,4,0,0,300,31,1,10,4,240,food,not applicable,not applicable
+Donuts,Apple Crumb Donut,290,11,4.5,0,0,310,44,1,22,5,311.5,food,not applicable,not applicable
+Donuts,Apple Fritter,510,28,12,0,0,470,57,2,24,6,540,food,not applicable,not applicable
+Donuts,Apple Stick,470,30,14,0,20,450,44,1,21,4,501,food,not applicable,not applicable
+Donuts,Apple Streusel Donut (Regional),310,12,4.5,0,0,310,47,1,24,5,333.5,food,not applicable,not applicable
+Donuts,Bavarian Kreme Donut,240,11,4,0,0,310,31,1,11,4,251,food,not applicable,not applicable
+Donuts,Bismark,480,22,9,0,0,470,63,1,34,6,517,food,not applicable,not applicable
+Donuts,Boston Kreme Donut,270,11,4.5,0,0,320,39,1,18,5,287.5,food,not applicable,not applicable
+Donuts,Butternut Donut,430,21,10,0,20,320,57,1,34,4,470,food,not applicable,not applicable
+Donuts,Chocolate Butternut Donut,440,23,10,0,0,420,55,2,32,4,478,food,not applicable,not applicable
+Donuts,Chocolate Coconut Donut (Regional),420,23,11,0,0,420,48,1,26,4,453,food,not applicable,not applicable
+Donuts,Chocolate Creme Donut,290,14,6,0,0,300,36,1,14,5,305,food,not applicable,not applicable
+Donuts,Chocolate Creme Stick (Regional),460,23,9,0,0,450,58,2,33,6,496,food,not applicable,not applicable
+Donuts,Chocolate Dipped French Cruller,280,15,7,0,50,150,33,0,20,3,304,food,not applicable,not applicable
+Donuts,Chocolate Frosted Cake Donut,360,20,9,0,20,340,41,1,21,4,386,food,not applicable,not applicable
+Donuts,Chocolate Frosted Donut,260,11,4.5,0,0,290,34,1,13,4,273.5,food,not applicable,not applicable
+Donuts,Chocolate Frosted with Sprinkles Donut,270,12,5,0,0,290,36,1,15,4,286,food,not applicable,not applicable
+Donuts,Chocolate Headlight Donut,310,14,6,0,0,310,41,1,19,5,330,food,not applicable,not applicable
+Donuts,Chocolate Long John,320,15,6,0,0,400,41,1,16,6,336,food,not applicable,not applicable
+Donuts,Cinnamon Donut,330,20,9,0,20,320,34,1,13,4,348,food,not applicable,not applicable
+Donuts,Cinnamon Stick,430,30,14,0,20,390,34,1,13,4,453,food,not applicable,not applicable
+Donuts,Coconut Donut,410,21,11,0,20,320,50,1,28,4,445,food,not applicable,not applicable
+Donuts,Coffee Roll,390,19,8,0,0,440,48,2,17,7,408,food,not applicable,not applicable
+Donuts,Creme Delight Donut (Regional),330,16,6,0,0,310,44,1,24,5,355,food,not applicable,not applicable
+Donuts,Double Chocolate Donut,370,22,10,0,0,440,40,1,19,4,395,food,not applicable,not applicable
+Donuts,Dulce de Leche Donut (Regional),270,11,4.5,0,0,280,37,1,13,5,282.5,food,not applicable,not applicable
+Donuts,Eclair,370,16,6,0,0,470,50,2,23,6,393,food,not applicable,not applicable
+Donuts,French Apple Donut (Regional),270,10,4,0,0,310,40,1,19,4,289,food,not applicable,not applicable
+Donuts,French Cruller,230,14,7,0,50,135,21,0,10,3,244,food,not applicable,not applicable
+Donuts,Frosted Vanilla Creme Donut,330,16,6,0,0,310,44,1,24,5,355,food,not applicable,not applicable
+Donuts,Glazed Blueberry Donut,350,18,7,0,30,380,44,1,21,4,374,food,not applicable,not applicable
+Donuts,Glazed Chocolate Donut,360,22,10,0,0,420,39,1,18,4,384,food,not applicable,not applicable
+Donuts,Glazed Chocolate Stick,410,25,10,0,0,480,42,2,20,4,436,food,not applicable,not applicable
+Donuts,Glazed Donut,240,11,4.5,0,0,270,33,1,13,4,253.5,food,not applicable,not applicable
+Donuts,Glazed Jelly Donut,280,10,4,0,0,290,44,1,21,4,301,food,not applicable,not applicable
+Donuts,Glazed Jelly Stick,530,30,14,0,20,430,61,1,34,4,574,food,not applicable,not applicable
+Donuts,Glazed Lemon Donut (Regional),270,10,4,0,0,310,40,1,19,4,289,food,not applicable,not applicable
+Donuts,Glazed Stick,460,30,14,0,20,390,43,1,21,4,491,food,not applicable,not applicable
+Donuts,Glazed Strawberry Donut,280,10,4,0,0,280,44,1,23,4,303,food,not applicable,not applicable
+Donuts,Guava Donut (Regional),240,10,4,0,0,280,32,1,12,4,252,food,not applicable,not applicable
+Donuts,Indy Creme Donut (Regional),330,16,6,0,0,310,44,1,24,5,355,food,not applicable,not applicable
+Donuts,Jelly Donut,250,10,4,0,0,290,36,1,13,4,263,food,not applicable,not applicable
+Donuts,Jelly Stick,500,30,14,0,20,430,52,1,26,4,536,food,not applicable,not applicable
+Donuts,Lemon Donut,230,10,4,0,0,310,31,1,10,4,240,food,not applicable,not applicable
+Donuts,Lemon Stick,470,31,14,0,20,460,44,1,21,4,501,food,not applicable,not applicable
+Donuts,Maple Creme Donut,290,14,5,0,0,290,38,1,18,4,309,food,not applicable,not applicable
+Donuts,Maple Creme Stick,460,22,9,0,0,440,59,1,34,5,498,food,not applicable,not applicable
+Donuts,Maple Frosted Donut,260,11,4.5,0,0,280,35,1,14,4,274.5,food,not applicable,not applicable
+Donuts,Maple Long John Donut (Regional),320,15,6,0,0,400,42,1,18,5,339,food,not applicable,not applicable
+Donuts,Maple Vanilla Creme Donut,330,15,6,0,0,300,45,1,25,4,357,food,not applicable,not applicable
+Donuts,Marble Frosted Donut (Regional),270,11,4.5,0,0,290,37,1,17,4,287.5,food,not applicable,not applicable
+Donuts,New Yorker Donut (Regional),330,16,6,0,0,310,44,1,24,5,355,food,not applicable,not applicable
+Donuts,Old Fashioned Donut,310,19,9,0,20,320,30,1,10,4,325,food,not applicable,not applicable
+Donuts,Peanut Donut,470,27,10,0,20,320,50,2,26,8,498,food,not applicable,not applicable
+Donuts,Plain Stick,410,30,14,0,20,390,31,1,10,4,430,food,not applicable,not applicable
+Donuts,Powdered Donut,330,20,9,0,20,320,34,1,14,4,349,food,not applicable,not applicable
+Donuts,Powdered Stick,440,31,14,0,20,390,36,1,15,4,465,food,not applicable,not applicable
+Donuts,Sour Cream Donut,360,17,7,0,10,360,49,1,25,4,388,food,not applicable,cream
+Donuts,Strawberry Frosted Donut,260,11,4.5,0,0,280,35,1,14,4,274.5,food,not applicable,not applicable
+Donuts,Strawberry Frosted with Sprinkles Donut,270,12,5,0,0,280,37,1,16,4,287,food,not applicable,not applicable
+Donuts,Sugared Donut,210,11,4.5,0,0,270,24,1,5,4,215.5,food,not applicable,not applicable
+Donuts,Sugared Stick,420,30,14,0,20,390,34,1,13,4,443,food,not applicable,not applicable
+Donuts,Taillight Donut,320,15,6,0,0,310,41,1,21,4,343,food,not applicable,not applicable
+Donuts,Toasted Coconut Donut,430,22,11,0,20,360,52,3,29,5,465,food,not applicable,not applicable
+Donuts,Vanilla Creme Donut,300,15,6,0,0,290,37,1,18,4,320,food,not applicable,not applicable
+Donuts,Vanilla Frosted Donut,260,11,4.5,0,0,280,35,1,14,4,274.5,food,not applicable,not applicable
+Donuts,Vanilla Frosted with Sprinkles Donut,270,11,4.5,0,0,280,38,1,16,4,286.5,food,not applicable,not applicable
+Donuts,Vanilla Headlight Donut,310,15,6,0,0,310,41,1,21,4,333,food,not applicable,not applicable
+Donuts,Vanilla Long John,320,15,6,0,0,400,42,1,17,5,338,food,not applicable,not applicable
+Donuts,"Caramel Swirl Frozen Chocolate, Large",900,17,12,0,40,380,176,1,165,11,1066,food,large,not applicable
+Donuts,"Caramel Swirl Frozen Chocolate, Medium",700,14,10,0,35,290,135,1,126,9,827,food,medium,not applicable
+Donuts,"Caramel Swirl Frozen Chocolate, Small",500,11,8,0,30,200,95,1,88,6,590,food,small,not applicable
+Donuts,"French Vanilla Swirl Frozen Chocolate, Large",900,17,12,0,40,370,175,1,162,11,1063,food,large,not applicable
+Donuts,"French Vanilla Swirl Frozen Chocolate, Medium",700,14,10,0,35,280,135,1,124,9,825,food,medium,not applicable
+Donuts,"French Vanilla Swirl Frozen Chocolate, Small",500,11,8,0,30,190,95,1,87,6,589,food,small,not applicable
+Donuts,"Frozen Chocolate, Large",890,18,13,0,35,330,175,4,158,10,1051,food,large,not applicable
+Donuts,"Frozen Chocolate, Medium",690,15,10,0,30,250,134,3,121,7,814,food,medium,not applicable
+Donuts,"Frozen Chocolate, Small",490,11,8,0,25,170,94,2,84,5,577,food,small,not applicable
+Donuts,"Hazelnut Swirl Frozen Chocolate, Large",900,17,12,0,40,370,176,1,162,11,1063,food,large,not applicable
+Donuts,"Hazelnut Swirl Frozen Chocolate, Medium",700,14,10,0,35,280,135,1,124,9,825,food,medium,not applicable
+Donuts,"Hazelnut Swirl Frozen Chocolate, Small",500,11,8,0,30,190,95,1,87,6,589,food,small,not applicable
+Donuts,All Caps Donut (Regional),280,11,4.5,0,0,290,40,1,20,4,300.5,food,not applicable,not applicable
+Donuts,Celebration Donut,520,37,18,0,25,310,42,1,24,3,559,food,not applicable,not applicable
+Donuts,Cherry Blossom Donut (Regional),270,11,4.5,0,0,280,38,1,16,4,286.5,food,not applicable,not applicable
+Donuts,Chocolate Frosted with Chocolate Sprinkles Donut (Regional),270,12,5,0,0,290,36,1,15,5,285,food,not applicable,not applicable
+Donuts,Flyers Donut (Regional),280,11,4.5,0,0,290,40,1,20,4,300.5,food,not applicable,not applicable
+Donuts,Pittsburgh Creme Donut (Regional),350,16,7,0,0,310,47,1,26,5,378,food,not applicable,not applicable
+Kolache,Kolache (Regional),390,23,7,0,60,1020,31,1,7,15,389,food,not applicable,not applicable
+Kolache,Kosher Beyond Sausage Sandwich,510,26,10,0,185,810,39,2,3,27,496,food,not applicable,not applicable
+Kolache,Kosher Beyond Sausage Wake-Up Wrap,280,17,8,0,105,500,15,1,1,15,274,food,not applicable,not applicable
+Kolache,Kosher Big n Toasted,610,37,10,0,340,1260,44,0,3,24,599,food,not applicable,not applicable
+Kolache,Kosher Dunkin Double Veggie Sausage Sandwich,600,18,6,0,180,1460,74,6,8,37,577,food,not applicable,not applicable
+Kolache,Kosher Egg and Cheese on an English Muffin,340,14,5,0,180,600,38,1,3,14,334,food,not applicable,not applicable
+Kolache,Kosher Egg and Cheese Wake Up Wrap,170,10,4,0,95,410,14,0,1,7,168,food,not applicable,not applicable
+Kolache,Kosher Grilled Cheese (Regional),420,23,12,0,55,840,36,0,3,17,418,food,not applicable,not applicable
+Kolache,Kosher Grilled Cheese with Veggie Bacon (Regional),480,27,12,0,55,1060,38,0,3,19,476,food,not applicable,not applicable
+Kolache,Kosher Power Breakfast Sandwich,360,16,6,0,25,800,30,6,5,26,345,food,not applicable,not applicable
+Kolache,Kosher Tuna Melt on a Croissant,630,42,15,0,65,820,38,1,5,24,626,food,not applicable,not applicable
+Kolache,Kosher Tuna Salad on a Plain Bagel,510,17,3,0,45,1060,64,4,7,24,496,food,not applicable,not applicable
+Kolache,Kosher Veggie Bacon Egg and Cheese on a Plain Bagel,510,17,5,0,180,1170,68,4,7,21,501,food,not applicable,not applicable
+Kolache,Kosher Veggie Bacon Wake-Up Wrap,200,12,4.5,0,95,520,15,0,1,8,197.5,food,not applicable,not applicable
+Kolache,Kosher Veggie Sausage Egg and Cheese on a Croissant,570,33,13,0,180,840,44,2,6,23,566,food,not applicable,not applicable
+Kolache,Kosher Veggie Sausage Wake-Up Wrap,210,11,4,0,95,540,16,1,1,11,204,food,not applicable,not applicable
+Muffins,Blueberry Muffin,460,15,3,0,60,390,77,1,44,6,501,food,not applicable,not applicable
+Muffins,Chocolate Chip Muffin,550,21,6,0,65,400,85,2,49,7,598,food,not applicable,not applicable
+Muffins,Coffee Cake Muffin,590,24,8,0,65,370,88,2,51,7,642,food,not applicable,not applicable
+Muffins,Corn Muffin,460,16,3,0,70,670,73,1,30,7,486,food,not applicable,not applicable
+Muffins,Butternut Munchkins,90,4,2,0,NA,70,12,0,7,1,98,food,not applicable,not applicable
+Muffins,Cinnamon Munchkins,60,3.5,1.5,0,NA,70,6,0,2,1,62.5,food,not applicable,not applicable
+Muffins,Glazed Blueberry Munchkins,70,3.5,2,0,NA,65,8,0,4,1,75,food,not applicable,not applicable
+Muffins,Glazed Chocolate Munchkins,60,3.5,1.5,0,0,80,8,0,4,1,64.5,food,not applicable,not applicable
+Muffins,Glazed Munchkins,60,3,1.5,0,0,60,7,0,3,1,63.5,food,not applicable,not applicable
+Muffins,Glazed Old Fashioned Munchkins,70,3.5,1.5,0,NA,70,8,0,4,1,74.5,food,not applicable,not applicable
+Muffins,Jelly Munchkins,60,3,1.5,0,0,65,8,0,3,1,63.5,food,not applicable,not applicable
+Muffins,Old Fashioned Munchkins,60,3.5,1.5,0,NA,70,6,0,2,1,62.5,food,not applicable,not applicable
+Muffins,Powdered Munchkins,60,3.5,1.5,0,NA,70,6,0,2,1,62.5,food,not applicable,not applicable
+Muffins,Multigrain Brown Sugar Oatmeal with Dried Fruit Topping,300,2.5,0,0,0,250,65,6,36,6,330,food,not applicable,not applicable
+Muffins,Biscuit (Regional),270,14,9,0,10,640,32,1,2,5,276,food,not applicable,not applicable
+Muffins,English Muffin,190,2,0,0,0,270,35,1,3,6,187,food,not applicable,not applicable
+Muffins,Multigrain Thin,150,4,0.5,0,0,220,24,4,3,6,147.5,food,not applicable,not applicable
+Muffins,Plain Croissant,340,19,8,0,0,250,37,1,5,6,347,food,not applicable,not applicable
+Sandwiches,"Bacon, Egg and Cheese on a Plain Bagel",520,18,6,0,190,1200,67,4,8,23,511,food,not applicable,not applicable
+Sandwiches,"Bacon, Egg and Cheese on Croissant",560,36,14,0,190,820,41,1,6,18,562,food,not applicable,not applicable
+Sandwiches,"Bacon, Egg and Cheese on English Muffin",400,19,7,0,190,840,39,1,4,18,393,food,not applicable,not applicable
+Sandwiches,"Bacon, Egg and Cheese Wake-Up Wrap",220,13,5,0,105,590,15,0,1,10,216,food,not applicable,not applicable
+Sandwiches,Beyond Sausage Sandwich,510,26,10,0,185,820,40,2,3,26,497,food,not applicable,not applicable
+Sandwiches,Beyond Sausage Wake Up Wrap,280,18,7,0,100,500,15,1,1,14,274,food,not applicable,not applicable
+Sandwiches,Big n Toasted (Regional),600,36,11,0,360,1190,41,0,4,27,588,food,not applicable,not applicable
+Sandwiches,"Biscuit, Bacon, Egg and Cheese (Regional)",490,31,15,0,195,1210,35,1,3,17,491,food,not applicable,not applicable
+Sandwiches,Chicken Biscuit (Regional),460,22,11,0,45,1080,46,1,3,21,453,food,not applicable,not applicable
+Sandwiches,Chicken Croissant Sandwich (Regional),650,36,14,0,65,1240,55,2,9,28,645,food,not applicable,not applicable
+Sandwiches,Double Sausage Breakfast Sandwich,900,54,19,0,265,1980,70,5,8,33,894,food,not applicable,not applicable
+Sandwiches,Egg and Cheese on a Plain Bagel,460,13,5,0,175,1010,66,4,8,19,454,food,not applicable,not applicable
+Sandwiches,Egg and Cheese on Croissant,500,31,13,0,175,640,40,1,6,15,504,food,not applicable,not applicable
+Sandwiches,Egg and Cheese on English Muffin,340,15,5,0,175,650,38,1,4,14,335,food,not applicable,not applicable
+Sandwiches,Egg and Cheese Wake-Up Wrap,180,10,4,0,95,470,14,0,1,7,178,food,not applicable,not applicable
+Sandwiches,Grilled Cheese (Regional),430,24,11,0,50,960,37,0,3,17,427,food,not applicable,not applicable
+Sandwiches,Grilled Cheese with Bacon (Regional),490,29,13,0,60,1140,38,0,4,21,486,food,not applicable,not applicable
+Sandwiches,Grilled Cheese with Ham (Regional),460,25,12,0,60,1220,38,0,4,22,454,food,not applicable,not applicable
+Sandwiches,"Ham, Egg and Cheese on a Plain Bagel",490,14,5,0,190,1270,67,4,8,24,479,food,not applicable,not applicable
+Sandwiches,"Ham, Egg and Cheese on Croissant",530,32,13,0,190,900,40,1,6,19,530,food,not applicable,not applicable
+Sandwiches,"Ham, Egg and Cheese on English Muffin",370,15,5,0,190,910,39,1,4,19,360,food,not applicable,not applicable
+Sandwiches,"Ham, Egg and Cheese Wake-Up Wrap",190,11,4,0,100,600,15,0,1,9,186,food,not applicable,not applicable
+Sandwiches,Ham and Cheese Rollups,280,13,6,0,40,1050,27,1,2,13,275,food,not applicable,not applicable
+Sandwiches,Power Breakfast Sandwich,420,23,8,0,60,980,28,5,5,25,408,food,not applicable,not applicable
+Sandwiches,"Sausage, Egg and Cheese on a Plain Bagel",680,34,12,0,220,1500,68,5,8,26,674,food,not applicable,not applicable
+Sandwiches,"Sausage, Egg and Cheese on Croissant",720,52,20,0,220,1120,42,2,6,21,725,food,not applicable,not applicable
+Sandwiches,"Sausage, Egg and Cheese on English Muffin",560,35,12,0,220,1140,40,2,4,21,555,food,not applicable,not applicable
+Sandwiches,"Sausage, Egg and Cheese Wake-Up Wrap",290,21,8,0,120,710,15,1,1,10,289,food,not applicable,not applicable
+Sandwiches,Sausage Biscuit (Regional),490,34,16,0,45,1120,32,1,2,13,495,food,not applicable,not applicable
+Sandwiches,Spam Breakfast Sandwich,630,42,17,0,200,1210,41,1,6,20,633,food,not applicable,not applicable
+Sandwiches,Turkey Sausage Sandwich on English Muffin,460,22,7,0,240,1120,39,1,4,26,445,food,not applicable,not applicable
+Sandwiches,Veggie Egg White Sandwich on a Multigrain Thin,290,13,5,0,20,550,27,5,4,17,282,food,not applicable,not applicable
+Sandwiches,Sweet Black Pepper Bacon Sandwich,650,41,17,0,205,850,46,1,11,23,655,food,not applicable,not applicable
+Sandwiches,Sweet Black Pepper Bacon Wake-Up Wrap,260,16,7,0,110,490,17,0,3,12,258,food,not applicable,not applicable
+Sandwiches,Sweet Black Pepper Snacking Bacon,190,12,4.5,0,35,500,10,0,9,10,193.5,food,not applicable,not applicable
+Sandwiches,Cinnamon Raisin Bagel,320,1,0,0,0,510,67,4,13,11,322,food,not applicable,not applicable
+Sandwiches,Everything Bagel,340,3,0.5,0,0,630,67,5,8,12,336.5,food,not applicable,not applicable
+Sandwiches,Multigrain Bagel,380,8,1,0,0,550,63,8,8,15,374,food,not applicable,not applicable
+Sandwiches,Plain Bagel,300,1,0,0,0,620,64,4,7,11,296,food,not applicable,not applicable
+Sandwiches,Sesame Seed Bagel,350,5,1,0,0,630,64,5,7,12,346,food,not applicable,not applicable
+Sandwiches,White Cheddar Bagel Twist,390,8,4.5,0,20,760,64,4,7,16,385.5,food,not applicable,not applicable
+Sandwiches,Kosher Sweet Black Pepper Bacon Sandwich,670,43,16,0,185,970,49,2,11,21,676,food,not applicable,not applicable
+Sandwiches,Kosher Sweet Black Pepper Bacon Wake-Up Wrap,280,17,7,0,105,580,19,1,3,12,278,food,not applicable,not applicable
+Sandwiches,Kosher Veggie Egg White Sandwich on a Multigrain Thin,290,13,5,0,20,550,27,5,4,17,282,food,not applicable,not applicable
+Sandwiches,Bacon and Cheese Rollups,370,22,9,0,55,1160,28,1,3,16,366,food,not applicable,not applicable
+Sandwiches,Ham and Cheese Rollups,280,13,6,0,40,1050,27,1,2,13,275,food,not applicable,not applicable
+Sandwiches,Classic Plain Cream Cheese Spread,120,12,8,0,40,200,3,0,3,2,129,food,not applicable,cream
+Sandwiches,Garden Veggie Cream Cheese Spread,100,10,6,0,35,200,2,0,1,2,105,food,not applicable,cream
+Sandwiches,Strawberry Cream Cheese Spread,130,10,6,0,30,100,9,0,8,2,142,food,not applicable,cream
+Sandwiches,Egg and Cheese DD Smart Wake-Up Wrap,180,10,4,0,95,470,14,0,1,7,178,food,not applicable,not applicable
+Sandwiches,"Ham, Egg and Cheese DD Smart Wake-Up Wrap",190,11,4,0,100,600,15,0,1,9,186,food,not applicable,not applicable
+Sandwiches,Turkey Sausage DD Smart Wake Up Wrap,240,14,5,0,125,700,15,0,1,13,233,food,not applicable,not applicable
+Sandwiches,Turkey Sausage Wake Up Wrap,240,15,6,0,115,680,15,0,1,11,236,food,not applicable,not applicable
+Sandwiches,Veggie Egg White DD Smart Wake-Up Wrap,150,7,3,0,20,490,15,1,1,7,147,food,not applicable,not applicable
+Sandwiches,Veggie Egg White Wake-Up Wrap,190,10,4.5,0,20,390,15,1,1,9,186.5,food,not applicable,not applicable
+Soft Serve,"Extra Thick Shake, Chocolate",610,20,13,0.5,70,320,92,3,85,19,689,food,not applicable,not applicable
+Soft Serve,"Extra Thick Shake, Coffee",460,19,12,0.5,70,310,55,1,51,18,505,food,not applicable,not applicable
+Soft Serve,"Extra Thick Shake, Vanilla",450,19,12,0.5,70,300,54,1,51,18,495,food,not applicable,not applicable
+Soft Serve,Frozen Coffee Float,360,15,9,0.5,55,170,50,1,47,8,408,food,not applicable,not applicable
+Soft Serve,M&M Mix-In,650,27,17,0.5,60,270,88,3,82,16,733,food,not applicable,not applicable
+Soft Serve,OREO Mix-In,510,21,11,0.5,55,350,70,2,55,14,562,food,not applicable,not applicable
+Soft Serve,Soft Serve Cone,260,9,6,0,35,160,35,1,27,9,284,food,not applicable,not applicable
+Soft Serve,Strawberry Coolatta Float,420,12,8,0,50,210,68,1,64,11,481,food,not applicable,not applicable
+Hash Browns,Hash Browns,130,6,1,0,0,420,12,2,0,5,126,food,not applicable,not applicable

@@ -35,7 +35,7 @@ Nevertheless, I have had plenty of items from both their drink and food menus an
 
 ### Research Questions
 
-The overarching research question for this EDA is what can one consume at either Starbucks or Dunkin Donuts in order to maintain a healthy, nutritious diet. There are many ways to address this question. Some initial querries are how do the calories, fat, protein and sugar vary by drink type or by food item at either retailer. To involve both food and drink items, I propose investigating which combination of food and drink items is most nutritious, at either Starbucks or Dunkin Donuts. A related question I have is which drink or food items are least nutritious and should be generally avoided. Lastly, I propose questioning how combinations of nutritious food and drinks vary from Starbucks and Dunkin Donuts, and which restaurant has the most nutritious options overall.
+The overarching research question for this EDA is what can one consume at either Starbucks or Dunkin Donuts in order to maintain a healthy, nutritious diet. There are many ways to address this question. Some initial querries are how do the calories, fat, protein and sugar vary by drink type or by food item at either retailer. To involve both food and drink items, I propose investigating which combination of food and drink items is most nutritious, at either Starbucks or Dunkin Donuts. A related question I have is which drink or food items are least nutritious and should be generally avoided. Lastly, I propose questioning how nutritious food and drinks vary from Starbucks and Dunkin Donuts, and which restaurant has the most nutritious options overall.
 
 ## Data Overview and Quality
 
@@ -45,10 +45,19 @@ The second raw dataset, stored as "starbucks_menu_nutrition_food_redo.csv", cont
 
 The third raw dataset, stored as "dunkindonutsnutrition.csv", contains 13 variables and 790 observations, corresponding to 780 different products sold by Dunking Donuts. All variables are stored as character vectors. Two variables concern the item category and name, while the remaining variables concern nutritional information. There are no missing values in this data set either.
 
-Raw dataset links:
--- Starbucks drinks dataset: <https://github.com/reisanar/datasets/blob/master/starbucks.csv>
--- Starbucks food dataset <https://www.kaggle.com/datasets/starbucks/starbucks-menu/>
--- Dunkin Donuts dataset: <https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition>
+### Raw dataset links:
+
+-- Starbucks drinks dataset: 
+
+<https://github.com/reisanar/datasets/blob/master/starbucks.csv>
+
+-- Starbucks food dataset: 
+
+<https://www.kaggle.com/datasets/starbucks/starbucks-menu/>
+
+-- Dunkin Donuts dataset: 
+
+<https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition>
 
 
 ### Starbucks Data Cleaning and Preparation
@@ -65,11 +74,11 @@ Finally, a new data frame entitled `starbucks_all_data` was created by joining t
 ### Dunkin Donuts Data Cleaning and Preparation
 In the `0b_dunkin_data_preparation` R script, the dataset "dunkindonutsnutrition.csv" was read in, copied as `dunkin_donuts_data`, and then cleaned. First, the variable named were changed with the names function to remove parentheses and spaces. Additionally, the names were made lowercase for consistency. 
 
-A new variable, `item_type` was created as a factor. The factor "drink" was assigned to drinks (based on the `category` variable) and the factor "food" was assigned to food items. Variables corresponding to nutritional information were converted into numeric vectors, as they generally contained numeric values. Moreover, a new factor variable, `size`, was created to identify the size of each drink. The size was extracted from the `item` name using the grepl() function. Items that were not given a size were assigned a factor of "not applicable". 
+A new variable, `item_type` was created as a factor. The factor "drink" was assigned to drinks (based on the `category` variable) and the factor "food" was assigned to food items. Variables corresponding to nutritional information were converted into numeric vectors, as they generally contained numeric values. Moreover, a new factor variable, `size`, was created to identify the size of each product. The size was extracted from the `item` name using the grepl() function. Items that were not given a size or milk_type were assigned a factor of "not applicable". Similarly, a new factor variable, `milk_type`, was created to identify the type of milk in each product, if applicable. 
 
 Finally, the data was filtered into two new datasets: `dunkin_donuts_drinks_data`, containing the drink observations; and `dunkin_donuts_food_data`, containing the food observations.
 
-
+From the R scripts, the cleaned datasets were downloaded as csv files using the write_csv() function, and then they were accessed using the read_csv() function.
 
 ```{r}
 #| label: basic-setup
@@ -79,18 +88,81 @@ library(magick)
 library(tidyverse)
 library(png)
 library(kableExtra)
+library(knitr)
 
-#EX: my_data <- read_csv("data/starbucks_drinks_data.csv")
+
 
 #Load packages (cleaned and prepared in R scripts 0a and 0b)
-#starbucks_drinks_data <- starbucks_drinks_data
-
+starbucks_drinks_data <- read_csv("data/starbucks_drinks_data.csv")
+starbucks_food_data <- read_csv("data/starbucks_food_data.csv")
+starbucks_data <- read_csv("data/starbucks_data.csv")
+dunkin_donuts_data <- read_csv("data/dunkin_donuts_data.csv")
+dunkin_donuts_drinks_data <- read_csv("data/dunkin_donuts_drinks_data.csv")
+dunkin_donuts_food_data <- read_csv("data/dunkin_donuts_food_data.csv")
 
 
 ```
 
 
 ## Explorations
+
+### Analysis of Types of Drinks
+
+#### Nutritional Content
+The first question I sought to answer was which drinks are considered the healthiest. I initially approached this quesiton by comparing the fat, sugar, and calorie content of drinks. For this analysis, I compared drink categories, rather than the individual drinks themselves, as it made it easier to make generalizations about drinks. 
+
+The following table and three figures depict the fat, sugar, and calorie content of types of drinks sold by Starbucks.
+```{r}
+starbucks_table <- starbucks_drinks_data |> 
+  group_by(beverage_category) |> 
+  summarize(fat = round(mean(fat_g, na.rm = TRUE)),
+            sugar = round(mean(sugars_g, na.rm = TRUE)),
+            calories = round(mean(calories, na.rm = TRUE))) |> 
+  rename("Average sugar content (g)" = sugar, 
+         "Average fat content (g)" = fat,
+         "Average calories" = calories,
+         "Drink Category" = beverage_category)
+
+kable(starbucks_table, caption = "Starbucks Drinks Nutritional Info")
+
+```
+
+
+
+
+![](figures/drinks_analysis/starbucks_drinks_fat_boxplot.png){width="600"}
+
+
+![](figures/drinks_analysis/starbucks_drinks_sugar_boxplot.png){width="600"}
+
+![](figures/drinks_analysis/starbucks_drinks_calories_boxplot.png){width="600"}
+ANALYZE.
+
+The following table and three figures depict the fat, sugar, and calorie content of types of drinks sold by Dunkin Donuts.
+
+```{r}
+dunkin_table <- dunkin_donuts_drinks_data |> 
+  group_by(category) |> 
+  summarize(fat = round(mean(fat_g, na.rm = TRUE)),
+            sugar = round(mean(sugars_g, na.rm = TRUE)),
+            calories = round(mean(calories, na.rm = TRUE))) |> 
+  rename("Average sugar content (g)" = sugar, 
+         "Average fat content (g)" = fat,
+         "Average calories" = calories,
+         "Drink Category" = category)
+
+kable(dunkin_table, caption = "Dunkin Donuts Drinks Nutritional Info")
+```
+
+
+![](figures/drinks_analysis/dunkin_drinks_fat_boxplot.png){width="600"}
+
+
+![](figures/drinks_analysis/dunkin_drinks_sugar_boxplot.png){width="600"}
+
+![](figures/drinks_analysis/dunkin_drinks_calories_boxplot.png){width="600"}
+ANALYZE.
+
 
 ## Conclusions
 
