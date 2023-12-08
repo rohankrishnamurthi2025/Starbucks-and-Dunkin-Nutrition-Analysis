@@ -106,10 +106,14 @@ dunkin_donuts_food_data <- read_csv("data/dunkin_donuts_food_data.csv")
 
 ## Explorations
 
-### Analysis of Types of Drinks
+### Analysis of Drinks
 
-#### Nutritional Content
-The first question I sought to answer was which drinks are considered the healthiest. I initially approached this quesiton by comparing the fat, sugar, and calorie content of drinks. For this analysis, I compared drink categories, rather than the individual drinks themselves, as it made it easier to make generalizations about drinks. 
+
+
+#### Nutritional Content by Drink Category
+
+##### Sugar, Fat, and Calories Content
+The first question I sought to answer was which drinks are considered the healthiest. I initially approached this quesiton by comparing the fat, sugar, and calorie content of drinks. In these categories, a beverage with a lower amount of each of these nutrients is considered healthier. For this analysis, I compared drink categories, rather than the individual drinks themselves, as it made it easier to make generalizations about drinks. 
 
 The following table and three figures depict the fat, sugar, and calorie content of types of drinks sold by Starbucks.
 ```{r}
@@ -162,6 +166,71 @@ kable(dunkin_table, caption = "Dunkin Donuts Drinks Nutritional Info")
 
 ![](figures/drinks_analysis/dunkin_drinks_calories_boxplot.png){width="600"}
 ANALYZE.
+
+##### Protein, Calcium, and Vitamin A and C Content
+I then address this questioned by investigating which beverages at each retailer had the highest amount of protein, calcium, and vitamins. In these categories, a beverage with a high content of each of these nutrients is considered more healthy.
+
+The Starbucks drinks data contains information regarding each drink's protein, calcium, and vitamin A and C content. The content of each of these nutrients is compared in the following table and graphs. A boxplot was used to compare protein content, similar to the other nutrients. However, frequency polygons were used to compare calcium, vitamin A, and vitamin C content due to a lack of data points other than 0%.
+
+```{r}
+starbucks_table_2 <- starbucks_drinks_data |> 
+  group_by(beverage_category) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE)),
+            calcium = round(mean(calcium_percent_dv, na.rm = TRUE)),
+            vitamin_a = round(mean(vitamin_a_percent_dv, na.rm = TRUE)),
+            vitamin_c = round(mean(vitamin_c_percent_dv, na.rm = TRUE))) |> 
+  rename("Average protein content (g)" = protein, 
+         "Average calcium (%DV)" = calcium,
+         "Average vitamin A (%DV)" = vitamin_a,
+         "Average vitamin C (%DV)" = vitamin_c,
+         "Drink Category" = beverage_category)
+kable(starbucks_table_2, caption = "Starbucks Drinks Nutritional Info, continued")
+
+```
+
+![](figures/drinks_analysis/starbucks_drinks_protein_boxplot.png){width="600"}
+![](figures/drinks_analysis/starbucks_drinks_calcium_freqpoly.png){width="600"}
+
+![](figures/drinks_analysis/starbucks_drinks_vitamin_a_freqpoly.png){width="600"}
+
+![](figures/drinks_analysis/starbucks_drinks_vitamin_c_freqpoly.png){width="600"}
+
+ANALYZE.
+
+The Dunkin Donuts drinks data only contains information regarding each drink's protein content. The protein content of each type of drink sold at Dunkin is compared in the following table and boxplot.
+
+```{r}
+dunkin_table_2 <- dunkin_donuts_drinks_data |> 
+  group_by(category) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE))) |> 
+  rename("Average protein content (g)" = protein,
+         "Drink Category" = category)
+kable(dunkin_table_2, caption = "Dunkin Donuts Drinks Nutritional Info, continued")
+```
+
+
+![](figures/drinks_analysis/dunkin_drinks_protein_boxplot.png){width="600"}
+
+
+ANALYZE.
+
+#### Nutritional Content by Milk Type
+
+Another question I sought to answer is how the nutrition content of each drink varies by milk type. When people order drinks from coffee shops, there are many different ways they can customize their drink to their liking. Thus, I found it important to analyze nutrition by milk preference. For this analysis, I measured the fat, sugar, calories, and then protein of drinks having grouped them by milk type. This was done by creating boxplots, with `milk_type` being the categorical variable, and then `calories`, `fat_g`, `sugar_g` and then `protein_g` being the continuous variables. 
+
+The following graphs illustrate the average nutritional content of Starbucks drinks by type of milk.
+
+![](figures/drinks_analysis/starbucks_milk_fat_boxplot.png){width="600"}
+
+![](figures/drinks_analysis/starbucks_milk_sugar_boxplot.png){width="600"}
+
+![](figures/drinks_analysis/starbucks_milk_calories_boxplot.png){width="600"}
+
+![](figures/drinks_analysis/starbucks_milk_protein_boxplot.png){width="600"}
+
+
+The following graphs illustrate the average nutritional content of Dunkin Donuts drinks by type of milk.
+
 
 
 ## Conclusions
