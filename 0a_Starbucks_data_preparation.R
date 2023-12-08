@@ -149,17 +149,15 @@ starbucks_data <- merge(
   all.y = TRUE)
 
 
-#Download datasets in the `data` folder
-write_csv(starbucks_food_data, 
-          "C:\\Users\\user\\Downloads\\Stat 301-1\\final-project-1-rohankrishnamurthi2025\\data\\starbucks_food_data.csv", 
-          col_names=TRUE)
-
-write_csv(starbucks_drinks_data, 
-          "C:\\Users\\user\\Downloads\\Stat 301-1\\final-project-1-rohankrishnamurthi2025\\data\\starbucks_drinks_data.csv", 
-          col_names=TRUE)
-
+#Download datasets
 write_csv(starbucks_data, 
-          "C:\\Users\\user\\Downloads\\Stat 301-1\\final-project-1-rohankrishnamurthi2025\\data\\starbucks_data.csv", 
+          "data/starbucks_data.csv", 
+          col_names=TRUE)
+write_csv(starbucks_food_data, 
+          "data/starbucks_food_data.csv", 
+          col_names=TRUE)
+write_csv(starbucks_drinks_data, 
+          "data/starbucks_drinks_data.csv", 
           col_names=TRUE)
 
 

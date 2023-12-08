@@ -129,5 +129,15 @@ dunkin_donuts_drinks_data <- dunkin_donuts_data |>
 dunkin_donuts_food_data <- dunkin_donuts_data |> 
   filter(item_type == "food")
 
+#Download datasets
 
+write_csv(dunkin_donuts_data, 
+          "data/dunkin_donuts_data.csv", 
+          col_names=TRUE)
+write_csv(dunkin_donuts_food_data, 
+          "data/dunkin_donuts_food_data.csv", 
+          col_names=TRUE)
+write_csv(dunkin_donuts_drinks_data, 
+          "data/dunkin_donuts_drinks_data.csv", 
+          col_names=TRUE)
 
