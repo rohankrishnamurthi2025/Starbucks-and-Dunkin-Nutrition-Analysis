@@ -141,7 +141,7 @@ kable(starbucks_table, caption = "Starbucks Drinks Nutritional Info")
 ![](figures/drinks_analysis/starbucks_drinks_sugar_boxplot.png){width="600"}
 
 ![](figures/drinks_analysis/starbucks_drinks_calories_boxplot.png){width="600"}
-Two data above shows that plain coffee has the lowest fat, sugar, and calorie content. This is expected because it has no additives. Aside from coffee, classic espresso drinks had a relatively content of fat, sugar, and calories, which in turn would make them the next healthiest option at Starbucks.
+The data above shows that plain coffee has the lowest fat, sugar, and calorie content. This is expected because it has no additives. Aside from coffee, classic espresso drinks had a relatively content of fat, sugar, and calories, which in turn would make them the next healthiest option at Starbucks.
 
 ###### Dunkin Donuts
 
@@ -310,7 +310,7 @@ Upon reviewing both the Starbucks and Dunkin Donuts milk data, one should order 
 
 In the previous section, I analyzed which typs of beverage had high (or low) contents of specific nutrients. There are more nuanced ways to assess the "healthiness" of a drink. In this section, I am to incorporate multiple variables to develop new ways to analyze healthiness.
 
-##### Beverages rich in protein
+##### Beverages rich in protein, low in calories
 
 First, I sought to determine which types of beverages were richest in protein while lowest unhealthy quantities, such as calories and fat. I compared the ratio of protein to calories for each drink type. Nevertheless, protein content can also be compared to sugar, fat, or other quantities for different metrics.
 
@@ -335,7 +335,7 @@ kable(starbucks_protein_table, caption = "Starbucks Protein to Calories")
 
 ![](figures/drinks_analysis/starbucks_drinks_protein_to_calories_faceted.png){width="600"}
 
-Among Starbucks drinks, it was found that coffee alone had the highest ratio of protein to calories. This is rather misleading, because coffee is very low-calorie to begin with. Aside from coffee, Classif Espresso Drinks and then smoothies had the next highes ratios of protein to calories. This caveat indicates that more methods are needed to assess the most nutritious drink types overall.
+Among Starbucks drinks, it was found that coffee alone had the highest ratio of protein to calories. This is rather misleading, because coffee is very low-calorie to begin with. Aside from coffee, Classic Espresso Drinks and then smoothies had the next highes ratios of protein to calories. This caveat indicates that more methods are needed to assess the most nutritious drink types overall.
 
 ###### Dunkin Donuts
 
@@ -455,7 +455,7 @@ starbucks_food_table <- starbucks_food_data |>
   rename("Protein (g)" = protein, 
          "Fiber (g)" = fiber,
          "Carbohydrates (g)" = carb,
-         "Fat (g)" = fiber,
+         "Fat (g)" = fat,
          "Healthiness Ratio" = ratio,
          "Food Item" = item)
   
@@ -514,13 +514,12 @@ dunkin_food_table_2 <- dunkin_donuts_food_data |>
             fiber = round(mean(fiber_g, na.rm = TRUE)),
             fat = round(mean(fat_g, na.rm = TRUE)),
             carb = round(mean(carb_g, na.rm = TRUE)),
-            fiber_g = round(mean(fiber_g, na.rm = TRUE)),
             ratio = round((protein*fiber)/(fat*carb), digits = 4)) |> 
   arrange(desc(ratio)) |> 
   rename("Protein (g)" = protein, 
          "Fiber (g)" = fiber,
          "Carbohydrates (g)" = carb,
-         "Fat (g)" = fiber,
+         "Fat (g)" = fat,
          "Healthiness Ratio" = ratio,
          "Food Category" = category)
 
@@ -663,6 +662,20 @@ Data figures:
 Starbucks food items had more protein and fiber, and fewer carbohydrates, fat, and calories, on average in comparison to Dunkin Donuts. This reinforces that Starbucks has healthier products overall. Once again, the great overlap of the histogram and frequency polygons indicates that that retailer and nutrition metrics are poorly correlated. Other factors aside from retailer have a greater impact on the nutrition of a food item. 
 
 ## Conclusions
+
+### Drinks Analysis
+Univariate analysis found that coffee had the least unhealthy nutrients, while smoothies had the most healthy nutrients at Starbucks. Similarly, Americanos had the least unhealthy nutrients, while lattes were most nutrient-rich at Dunkin Donuts. Among both retailers, drinks made with skim milk were lowest in fat, while milk type had little effect on the sugar, calories, and protein of each drink. New metrics were developed to assess healthiness of drinks in a more nuanced manner. It was found that coffee at Starbucks and lattes at Dunkin Donuts had the highest ratio of protein to calories. Moreover, at Starbucks, smoothies had the highest proportion of vitamins and minerals. Given the many different definitions of "healthiness" used in this analysis, it was largely inconclusive which drink from either retailer can be deemed the healthiest, and whether these drinks are consistent across retailers. 
+
+### Food Analysis
+Lack of organization and categorization of Starbucks food data made it difficult to identify healthy food options. Individual food items were identified, but no trends in food options could be deduced for Starbucks products. On the other hand, the organization of the Dunkin Donuts food data permitted univariate and multivariate analyses. Univariate analyses found hash browns to maximize individual nutrients the most. A new metric was developed using multiple variables to assess healthiness of food items at Dunkin Donuts. Among all food products, the metric found sandwiches to be the healthiest option. Given that the metric assumes protein and fiber are inversely correlated with carbohydrates and fat, the relationships of the two "healthy" variables with the two "unhealthy" variables was assessed. The results indicated that the assumptions of the metric are inherently flawed, and more nuanced metrics are necessary. 
+
+### Comparison of Starbucks and Dunkin Donuts
+Comparing Starbucks and Dunkin Donuts data found that Starbucks had healthier food and drink options on average, based on five nutrients for drinks and four nutrients for food. Nevertheless, there was great overlap of data between the two retailers, indicating that retailer has little to no effect on the healthiness of food and drink products in this case. This was as expected, as both retailers offer a large variety of products that differ in their nutrition. 
+
+### Next Steps
+
+The overarching dilemma in this exploratory data analysis was that there are several ways to define how "healthy" a drink or food item is. Comparing individual nutrients, or combinations of nutrients, demonstrated flaws in this analysis. A potential next step is developed a more standardized definition of healthiness. Opinions of professions, such as dieticians and nutritionists, can be incorporated into deveoping a more standardized definition of healthiness. This definition can then be used to develop a metric to assess healthiness of drinks and food items based on their nutritional information. Moreover, more detailed data sets, included information of other nutrients, can be incorporated to build more nuanced metrics in assessing healthiness.
+
 
 ## References
 
