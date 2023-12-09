@@ -440,10 +440,104 @@ starbucks_food_table <- starbucks_food_data |>
 kable(starbucks_food_table, caption = "Health Ratio of Starbucks Food Items")
 ```
 
+ANALYZE
+
+#### Nutritional Information of Dunkin Donuts Food Items
 
 
+I first sought to analyze which categories of food items from Dunkin Donuts are the healthiest. The following table records the average protein, fiber, carbohydrate, fat and calorie content in each food category. The following frequency polygons illustrate the protein, fiber, carbohydrate, fat, and calorie information for each category of food items.
 
 
+```{r}
+dunkin_food_table <- dunkin_donuts_food_data |> 
+  group_by(category) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE)),
+            fiber = round(mean(fiber_g, na.rm = TRUE)),
+            carb = round(mean(carb_g, na.rm = TRUE)),
+            fat = round(mean(fat_g, na.rm = TRUE)),
+            calories = round(mean(calories, na.rm = TRUE))
+            ) |> 
+  rename("Average protein content (g)" = protein,
+         "Average fiber content (g)" = fiber,
+         "Average carbohydrate content (g)" = carb,
+         "Average fat content (g)" = fat,
+         "Average calories" = calories,
+         "Food Category" = category)
+kable(dunkin_food_table, caption = "Dunkin Donuts Food Nutrient Information")
+
+
+```
+
+
+![](figures/food_analysis/dunkin_food_protein_freqpoly.png)
+![](figures/food_analysis/dunkin_food_fiber_freqpoly.png)
+
+![](figures/food_analysis/dunkin_food_carb_freqpoly.png)
+
+![](figures/food_analysis/dunkin_food_fat_freqpoly.png)
+
+![](figures/food_analysis/dunkin_food_calorie_freqpoly.png)
+
+ANALYZE
+
+It was also sought to determine the healthiness of Dunkin Donuts food categories using multiple variables simultaneously. Thus, the same metric applied to the starbucks food data was used to assess healthiness of each food category. The average protein content was multiplied by the average fiber content, which were then divided by the average carbohydrate and fat content. The results are in the table and frequency polygon below.
+
+```{r}
+dunkin_food_table_2 <- dunkin_donuts_food_data |> 
+  group_by(category) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE)),
+            fiber = round(mean(fiber_g, na.rm = TRUE)),
+            fat = round(mean(fat_g, na.rm = TRUE)),
+            carb = round(mean(carb_g, na.rm = TRUE)),
+            fiber_g = round(mean(fiber_g, na.rm = TRUE)),
+            ratio = round((protein*fiber)/(fat*carb), digits = 4)) |> 
+  arrange(desc(ratio)) |> 
+  rename("Protein (g)" = protein, 
+         "Fiber (g)" = fiber,
+         "Carbohydrates (g)" = carb,
+         "Fat (g)" = fiber,
+         "Healthiness Ratio" = ratio,
+         "Food Category" = category)
+
+kable(dunkin_food_table_2, caption = "Dunkin Donuts Food Categories' Healthiness Ratio")
+```
+
+
+ANALYZE
+
+Additionally, Dunkin Donuts is arguably best known for their donuts, so I thought it was fitting to analyze the individual donuts themselves. Many consumers come specifically to eat their donuts, so this information can help consumers select the right donut based on their dietary preferences.
+
+```{r}
+dunkin_donuts_table <- dunkin_donuts_food_data |> 
+  filter(category == "Donuts") |> 
+  group_by(item) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE)),
+            fiber = round(mean(fiber_g, na.rm = TRUE)),
+            fat = round(mean(fat_g, na.rm = TRUE)),
+            carb = round(mean(carb_g, na.rm = TRUE)),
+            fiber_g = round(mean(fiber_g, na.rm = TRUE)),
+            ratio = round((protein*fiber)/(fat*carb), digits = 4)) |> 
+  top_n(10, ratio) |> 
+  arrange(desc(ratio)) |> 
+  rename("Protein (g)" = protein, 
+         "Fiber (g)" = fiber,
+         "Carbohydrates (g)" = carb,
+         "Fat (g)" = fiber,
+         "Healthiness Ratio" = ratio,
+         "Food Item" = item)
+  
+kable(dunkin_donuts_table, caption = "Dunkin Donuts' Donuts Nutritional Information and Healthiness Ratio")
+```
+
+Finally, I wanted to use the Dunkin Donuts food data to evaluate how accurate the healthiness metric is assessing the healthiness of a food item. The metric is based on the assumption that the protein and fiber contents (the healthy variables) are inversely proportion to the carbohydrate and fat contents (the unhealthy variables). In order to assess this relationship, the following scatterplots were made comparing the healthy variables to the unhealthy variables.  
+
+![](figures/food_analysis/dunkin_food_protein_fat.png)
+
+![](figures/food_analysis/dunkin_food_protein_carb.png)
+
+![](figures/food_analysis/dunkin_food_fiber_fat.png)
+
+![](figures/food_analysis/dunkin_food_fiber_carb.png)
 
 ### Summary of major findings
 
