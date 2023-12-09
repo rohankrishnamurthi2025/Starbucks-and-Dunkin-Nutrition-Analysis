@@ -25,7 +25,7 @@ from: markdown+emoji
 
 ## Introduction
 
-In this report, I am inquiring about the nutritional information of Starbucks' and Dunkin Donuts' food and drink items. The first dataset I am analyzing contains relevant nutritional information of all beverages available at Starbucks. The second dataset concerns all of the food items available at Starbucks. The third dataset concerns the nutritional information of all  products, both food and drink items, available at Dunkin Donuts.
+In this report, I am inquiring about the nutritional information of Starbucks' and Dunkin Donuts' food and drink items. The first two  I obtained contains relevant nutritional information of all beverages available at Starbucks. The next dataset concerns all of the food items available at Starbucks. The third dataset concerns the nutritional information of all  products, both food and drink items, available at Dunkin Donuts.
 
 ### Motivation for research
 
@@ -35,7 +35,7 @@ Nevertheless, I have had plenty of items from both their drink and food menus an
 
 ### Research questions
 
-The overarching research question for this EDA is what can one consume at either Starbucks or Dunkin Donuts in order to maintain a healthy, nutritious diet. There are many ways to address this question. Some initial querries are how do the calories, fat, protein and sugar vary by drink type or by food item at either retailer. To involve both food and drink items, I propose investigating which combination of food and drink items is most nutritious, at either Starbucks or Dunkin Donuts. A related question I have is which drink or food items are least nutritious and should be generally avoided. Lastly, I propose questioning how nutritious food and drinks vary from Starbucks and Dunkin Donuts, and which restaurant has the most nutritious options overall.
+The overarching research question for this EDA is what can one consume at either Starbucks or Dunkin Donuts in order to maintain a healthy, nutritious diet. There are many ways to address this question. Some initial querries are how do the calories, fat, protein and sugar vary by drink type or by food item at either retailer. A related question I have is which drink or food items are least nutritious and should be generally avoided. Lastly, I propose questioning how nutritious food and drinks vary from Starbucks and Dunkin Donuts, and which restaurant has the most nutritious options overall.
 
 ## Data Overview and Quality
 
@@ -78,6 +78,9 @@ Finally, the data was filtered into two new datasets: `dunkin_donuts_drinks_data
 
 From the R scripts, the cleaned datasets were downloaded as csv files using the write_csv() function, and then they were accessed using the read_csv() function.
 
+## Additional data preparation
+Finally, new data frames entitled `all_drinks_data` and `all_food_data` were created by joining the two existing food or drink data frames with the merge() function. Columns were renamed in certain instances for consistency across both datasets to be combined. Additionally, a new variable `retailer` was added to each observation to distinguish Starbucks from Dunkin Donuts products. These data frames were made to facilitate comparison of Starbucks and Dunkin Donuts products.
+
 ```{r}
 #| label: basic-setup
 
@@ -102,11 +105,9 @@ all_food_data <- read_csv("data/all_food_data.csv")
 
 ```
 
-## Additional data preparation
-Finally, new data frames entitled `all_drinks_data` and `all_food_data` were created by joining the two existing food or drink data frames with the merge() function. Columns were renamed in certain instances for consistency across both datasets to be combined. Additionally, a new variable `retailer` was added to each observation to distinguish Starbucks from Dunkin Donuts products. These data frames were made to facilitate comparison of Starbucks and Dunkin Donuts products.
 
 
-## Explorations
+## Explorations of Nutrition of Starbucks and Dunkin Donuts Products
 
 ### Analysis of Drinks
 
@@ -672,7 +673,7 @@ Lack of organization and categorization of Starbucks food data made it difficult
 ### Comparison of Starbucks and Dunkin Donuts
 Comparing Starbucks and Dunkin Donuts data found that Starbucks had healthier food and drink options on average, based on five nutrients for drinks and four nutrients for food. Nevertheless, there was great overlap of data between the two retailers, indicating that retailer has little to no effect on the healthiness of food and drink products in this case. This was as expected, as both retailers offer a large variety of products that differ in their nutrition. 
 
-### Next Steps
+### Insights and Next Steps
 
 The overarching dilemma in this exploratory data analysis was that there are several ways to define how "healthy" a drink or food item is. Comparing individual nutrients, or combinations of nutrients, demonstrated flaws in this analysis. A potential next step is developed a more standardized definition of healthiness. Opinions of professions, such as dieticians and nutritionists, can be incorporated into deveoping a more standardized definition of healthiness. This definition can then be used to develop a metric to assess healthiness of drinks and food items based on their nutritional information. Moreover, more detailed data sets, included information of other nutrients, can be incorporated to build more nuanced metrics in assessing healthiness.
 

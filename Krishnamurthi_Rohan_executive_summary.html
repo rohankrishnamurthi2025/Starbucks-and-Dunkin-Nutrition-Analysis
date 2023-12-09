@@ -3037,7 +3037,26 @@ vertical-align: -.125em;
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#research-questions" id="toc-research-questions" class="nav-link" data-scroll-target="#research-questions">Research questions</a></li>
+  </ul></li>
+  <li><a href="#data-overview" id="toc-data-overview" class="nav-link" data-scroll-target="#data-overview">Data Overview</a></li>
+  <li><a href="#explorations-of-nutrition-of-starbucks-and-dunkin-donuts-products" id="toc-explorations-of-nutrition-of-starbucks-and-dunkin-donuts-products" class="nav-link" data-scroll-target="#explorations-of-nutrition-of-starbucks-and-dunkin-donuts-products">Explorations of Nutrition of Starbucks and Dunkin Donuts Products</a>
+  <ul class="collapse">
+  <li><a href="#analysis-of-drinks" id="toc-analysis-of-drinks" class="nav-link" data-scroll-target="#analysis-of-drinks">Analysis of Drinks</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
+  <ul class="collapse">
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -3074,7 +3093,400 @@ Data Science 1 with R (STAT 301-1)</div><p></p>
 </header>
 
 
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Github Repo Link
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025">https://github.com/stat301-1-2023-fall/final-project-1-rohankrishnamurthi2025</a></p>
+</div>
+</div>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this report, I am inquiring about the nutritional information of Starbucks’ and Dunkin Donuts’ food and drink items. I chose these datasets because I normally enjoy both Starbucks’s and Dunkin Donuts’ offerings. I am curious how one can dine at either of these retailers and still meet their nutritional wants and needs.</p>
+<section id="research-questions" class="level3">
+<h3 class="anchored" data-anchor-id="research-questions">Research questions</h3>
+<p>The overarching research question for this EDA is what can one consume at either Starbucks or Dunkin Donuts in order to maintain a healthy, nutritious diet. As there are many ways to define healthiness of a drink or food item, there are many ways to go about answering this question. Additionally, I propose questioning how nutritious food and drinks vary from Starbucks and Dunkin Donuts, and which restaurant has the most nutritious options overall.</p>
+</section>
+</section>
+<section id="data-overview" class="level2">
+<h2 class="anchored" data-anchor-id="data-overview">Data Overview</h2>
+<p>The three raw datasets were then copied into new datasets, which were then cleaned and prepared for analysis. The first raw dataset, entitled “starbucks.csv”, concerns nutrition of drinks at Starbucks. The second raw dataset, stored as “starbucks_menu_nutrition_food_redo.csv”, concerns nutrition of food at Starbucks. The third raw dataset, stored as “dunkindonutsnutrition.csv”, concerns nutrition fo food and drink items at Dunkin Donuts. The datasets were cleaned and then stored into new datasets, concerning either Starbucks or Dunkin food or drink items, or any combination of these.</p>
+</section>
+<section id="explorations-of-nutrition-of-starbucks-and-dunkin-donuts-products" class="level2">
+<h2 class="anchored" data-anchor-id="explorations-of-nutrition-of-starbucks-and-dunkin-donuts-products">Explorations of Nutrition of Starbucks and Dunkin Donuts Products</h2>
+<section id="analysis-of-drinks" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-of-drinks">Analysis of Drinks</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Starbucks Drinks Nutritional Info</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Drink Category</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average fat content (g)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average sugar content (g)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average calories</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Classic Espresso Drinks</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Coffee</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Frappuccino Blended Coffee</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">277</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Frappuccino Blended Creme</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">233</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Frappuccino Light Blended Coffee</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">162</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Shaken Iced Beverages</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">114</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Signature Espresso Drinks</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">250</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smoothies</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">282</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tazo Tea Drinks</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">177</td>
+</tr>
+</tbody>
+</table>
 
+
+</div>
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Dunkin Donuts Drinks Nutritional Info</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Drink Category</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average fat content (g)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average sugar content (g)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average calories</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cold Brew Coffee</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Coolatta</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">96</td>
+<td style="text-align: right;">427</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dunkin Refreshers</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">320</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Frozen Coffee</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">640</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hot Americano</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hot Cappuccino</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">223</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hot Chocolate</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">368</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hot Coffee</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">162</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hot Latte</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">274</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hot Macchiato</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">233</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Iced Americano</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iced Cappuccino</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">223</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Iced Coffee</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">142</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iced Latte</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">273</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Iced Macchiato</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">226</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iced Tea</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">109</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Starbucks Drinks Nutritional Info, continued</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Drink Category</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average protein content (g)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average calcium (%DV)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average vitamin A (%DV)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average vitamin C (%DV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Classic Espresso Drinks</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Coffee</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Frappuccino Blended Coffee</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Frappuccino Blended Creme</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Frappuccino Light Blended Coffee</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Shaken Iced Beverages</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Signature Espresso Drinks</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Smoothies</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tazo Tea Drinks</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Dunkin Donuts Drinks Nutritional Info, continued</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Drink Category</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Average protein content (g)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cold Brew Coffee</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Coolatta</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dunkin Refreshers</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Frozen Coffee</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hot Americano</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hot Cappuccino</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hot Chocolate</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hot Coffee</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hot Latte</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hot Macchiato</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Iced Americano</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iced Cappuccino</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Iced Coffee</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iced Latte</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Iced Macchiato</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iced Tea</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>The data indicate that</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Univariate analysis found that coffee and smoothies were deemed the most nutrient-rich at Starbucks. Similarly, Americanos and lattes were the most nutrient-rich at Dunkin Donuts. Among both retailers, drinks made with skim milk were lowest in fat, while milk type had little effect on the sugar, calories, and protein of each drink. Additionally, it was found that coffee at Starbucks and lattes at Dunkin Donuts had the highest ratio of protein to calories, while smoothies at Starbucks had the highest proportion of vitamins and minerals. Given the many different definitions of “healthiness” used in this analysis, it was largely inconclusive which drink from either retailer can be deemed the healthiest, and whether these drinks are consistent across retailers.</p>
+<p>Lack of organization and categorization of Starbucks food data made it difficult to identify healthy food options. Individual food items were identified, but no trends in food options could be deduced for Starbucks products. On the other hand, the organization of the Dunkin Donuts food data permitted univariate and multivariate analyses. A new metric was developed using multiple variables to assess healthiness of food items at Dunkin Donuts. The metric found sandwiches to be the healthiest option. Assessment of the accuracy of the metric indicated that the assumptions of the metric are inherently flawed, and more nuanced metrics are necessary.</p>
+<p>Comparing Starbucks and Dunkin Donuts data found that Starbucks had healthier food and drink options on average, based on five nutrients for drinks and four nutrients for food. Nevertheless, there was great overlap of data between the two retailers, indicating that retailer has little to no effect on the healthiness of food and drink products in this case. This was as expected, as both retailers offer a large variety of products that differ in their nutrition.</p>
+<section id="next-steps" class="level3">
+<h3 class="anchored" data-anchor-id="next-steps">Next Steps</h3>
+<p>The overarching dilemma in this exploratory data analysis was that there are several ways to define how “healthy” a drink or food item is. Comparing individual nutrients, or combinations of nutrients, demonstrated flaws in this analysis. A potential next step is developed a standardized definition of healthiness, which could then be used to make a more standardized metric in asssessing healthiness of food products.</p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Arvidsson, J. (2023, September) Dunkin’ Donuts’ Nutrition: Dunkin’ Donuts’ Menu Nutrition, Micronutrients, and Calorie Information. Kaggle. <a href="https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition" class="uri">https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition</a></p>
+<p>Sanchez-Arias, R. (2023, October 19) Sample Datasets: A collection of datasets from multiple sources to be used for demonstrations in data science courses. GitHub. <a href="https://github.com/reisanar/datasets" class="uri">https://github.com/reisanar/datasets</a></p>
+<p>Starbucks. (2017) Nutrition factors for Starbucks: Nutrition information for Starbucks menu items, including food and drinks. Kaggle. <a href="https://www.kaggle.com/datasets/starbucks/starbucks-menu/data" class="uri">https://www.kaggle.com/datasets/starbucks/starbucks-menu/data</a></p>
+</section>
 
 </main>
 <!-- /main column -->
