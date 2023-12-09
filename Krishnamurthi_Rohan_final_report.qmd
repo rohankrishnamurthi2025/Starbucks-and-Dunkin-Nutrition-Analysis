@@ -27,13 +27,13 @@ from: markdown+emoji
 
 In this report, I am inquiring about the nutritional information of Starbucks' and Dunkin Donuts' food and drink items. The first dataset I am analyzing contains relevant nutritional information of all beverages available at Starbucks. The second dataset concerns all of the food items available at Starbucks. The third dataset concerns the nutritional information of all  products, both food and drink items, available at Dunkin Donuts.
 
-### Motivation for Research
+### Motivation for research
 
 I chose these datasets because I normally enjoy both Starbucks's and Dunkin Donuts' offerings. However, it must be noted that many students and I are currently boycotting Starbucks due to the company's decision to not support for the Palestinian people given the humanitarian crisis they are currently experiencing. While I enjoy their products, I currently will not support the company due to this issue.
 
 Nevertheless, I have had plenty of items from both their drink and food menus and I feel knowledgeable enough to work with data concerning both. Also, I really enjoy making and trying intricate coffee and tea drinks, so I'd be happy to work with data regarding Starbucks and Dunkin Donuts. I decided to include the food information as well as a challenge to work with multiple sets of data. Working with data from both Starbucks and Dunkin Donuts allows more depth in the exploration of nutrition information.
 
-### Research Questions
+### Research questions
 
 The overarching research question for this EDA is what can one consume at either Starbucks or Dunkin Donuts in order to maintain a healthy, nutritious diet. There are many ways to address this question. Some initial querries are how do the calories, fat, protein and sugar vary by drink type or by food item at either retailer. To involve both food and drink items, I propose investigating which combination of food and drink items is most nutritious, at either Starbucks or Dunkin Donuts. A related question I have is which drink or food items are least nutritious and should be generally avoided. Lastly, I propose questioning how nutritious food and drinks vary from Starbucks and Dunkin Donuts, and which restaurant has the most nutritious options overall.
 
@@ -60,7 +60,7 @@ The third raw dataset, stored as "dunkindonutsnutrition.csv", contains 13 variab
 <https://www.kaggle.com/datasets/joebeachcapital/dunkin-donuts-nutrition>
 
 
-### Starbucks Data Cleaning and Preparation
+### Starbucks data cleaning and preparation
 In the `0a_starbucks_data_preparation` R script, the dataset "starbucks_menu_nutrition_food_redo.csv" was read in, copied as `starbucks_food_data`, and then cleaned. The first issue with the raw data was that the variable names had spaces, which could make it difficult ot select these variables. The spaces were replaced with underscores using the names() function. Also, the variable names were be made into lowercase names for consistency.
 
 The dataset "starbucks.csv" was read in, copied as `starbucks_drinks_data`, and then cleaned as well. The data frame had the same issue in that the column names had uppercase letters and spaces. This was addressed using the names() function as well. Additionally, in the column names "Total Fat g", "Dietary Fiber g", and "Total Carbohydrates g", the initial word was be removed so these variables would have identical names to the `starbucks_food_data` dataset. This made facilitated joining observations in both data frames.
@@ -69,9 +69,7 @@ In the `beverage_prep` column of `starbucks_drink_data`, the size of beverage wa
 
 Additionally, the information in the `beverage_prep` column in `starbucks_drinks_data` was used to create new variables-- one for milk type and one for size. First, the column `milk_type` was developed bt extracting the type of milk from the `beverage_prep` column. Drinks without any milk intentionally had `NA` in this column. A for loop was used to iterate through each observation in the `beverage_prep` column, and if statements were used to identify the type of milk and add it to the `milk_type` column for each observation. The column `size` was added by extracting the size of drink from the `beverage_prep` column. A for loop can was to iterate through each observation in the `beverage_prep` column, and if statements were used to identify the beverage size and add it to the `size` column for each observation.
 
-Finally, a new data frame entitled `starbucks_all_data` was created by joining the two existing data frames with the merge() function. The `beverage` and `food_item` variables were renamed to `item`, so the data frames could share this variable. Then, the two data frames were combined by the variables `item`, `calories`, `fat_g`, `carb_g`, `fiber_g`, and `protein_g`, having selected these variables upon entering the data sets into the merge() function.
-
-### Dunkin Donuts Data Cleaning and Preparation
+### Dunkin Donuts data cleaning and preparation
 In the `0b_dunkin_data_preparation` R script, the dataset "dunkindonutsnutrition.csv" was read in, copied as `dunkin_donuts_data`, and then cleaned. First, the variable named were changed with the names function to remove parentheses and spaces. Additionally, the names were made lowercase for consistency. 
 
 A new variable, `item_type` was created as a factor. The factor "drink" was assigned to drinks (based on the `category` variable) and the factor "food" was assigned to food items. Variables corresponding to nutritional information were converted into numeric vectors, as they generally contained numeric values. Moreover, a new factor variable, `size`, was created to identify the size of each product. The size was extracted from the `item` name using the grepl() function. Items that were not given a size or milk_type were assigned a factor of "not applicable". Similarly, a new factor variable, `milk_type`, was created to identify the type of milk in each product, if applicable. 
@@ -104,18 +102,20 @@ all_food_data <- read_csv("data/all_food_data.csv")
 
 ```
 
+## Additional data preparation
+Finally, new data frames entitled `all_drinks_data` and `all_food_data` were created by joining the two existing food or drink data frames with the merge() function. Columns were renamed in certain instances for consistency across both datasets to be combined. Additionally, a new variable `retailer` was added to each observation to distinguish Starbucks from Dunkin Donuts products. These data frames were made to facilitate comparison of Starbucks and Dunkin Donuts products.
+
 
 ## Explorations
 
 ### Analysis of Drinks
 
-
-
 #### Nutritional Content by Drink Category
 
 ##### Sugar, Fat, and Calories Content
-The first question I sought to answer was which drinks are considered the healthiest. I initially approached this quesiton by comparing the fat, sugar, and calorie content of drinks. In these categories, a beverage with a lower amount of each of these nutrients is considered healthier. For this analysis, I compared drink categories, rather than the individual drinks themselves, as it made it easier to make generalizations about drinks. 
+The first question I sought to answer was which drinks are considered the healthiest. I initially approached this quesiton by comparing the fat, sugar, and calorie content of drinks. In these categories, a beverage with a lower amount of each of these nutrients is considered healthier. For this analysis, I compared drink categories, rather than the individual drinks themselves. This was done because there were far fewer drink categories, so it made it easier to make generalizations about drinks. 
 
+###### Starbucks
 The following table and three figures depict the fat, sugar, and calorie content of types of drinks sold by Starbucks.
 ```{r}
 starbucks_table <- starbucks_drinks_data |> 
@@ -141,7 +141,9 @@ kable(starbucks_table, caption = "Starbucks Drinks Nutritional Info")
 ![](figures/drinks_analysis/starbucks_drinks_sugar_boxplot.png){width="600"}
 
 ![](figures/drinks_analysis/starbucks_drinks_calories_boxplot.png){width="600"}
-ANALYZE.
+Two data above shows that plain coffee has the lowest fat, sugar, and calorie content. This is expected because it has no additives. Aside from coffee, classic espresso drinks had a relatively content of fat, sugar, and calories, which in turn would make them the next healthiest option at Starbucks.
+
+###### Dunkin Donuts
 
 The following table and three figures depict the fat, sugar, and calorie content of types of drinks sold by Dunkin Donuts.
 
@@ -166,10 +168,12 @@ kable(dunkin_table, caption = "Dunkin Donuts Drinks Nutritional Info")
 ![](figures/drinks_analysis/dunkin_drinks_sugar_boxplot.png){width="600"}
 
 ![](figures/drinks_analysis/dunkin_drinks_calories_boxplot.png){width="600"}
-ANALYZE.
+From the data above, it is clear that Hot and Iced Americano drinks had the lowest content of fat, sugar, and calories, making them the healthiest options offered at Dunkin Donuts. Aside from Americanos, Iced Tea had a low content of fat, while Cold Brew Coffee had a relatively low content of sugar and calories. 
 
 ##### Protein, Calcium, and Vitamin A and C Content
-I then address this questioned by investigating which beverages at each retailer had the highest amount of protein, calcium, and vitamins. In these categories, a beverage with a high content of each of these nutrients is considered more healthy.
+I then address this questioned by investigating which beverages at each retailer had the highest amount of protein, calcium, and vitamins. In these categories, a beverage with a high content of each of these nutrients is considered healthier.
+
+###### Starbucks
 
 The Starbucks drinks data contains information regarding each drink's protein, calcium, and vitamin A and C content. The content of each of these nutrients is compared in the following table and graphs. A boxplot was used to compare protein content, similar to the other nutrients. However, frequency polygons were used to compare calcium, vitamin A, and vitamin C content due to a lack of data points other than 0%.
 
@@ -196,9 +200,11 @@ kable(starbucks_table_2, caption = "Starbucks Drinks Nutritional Info, continued
 
 ![](figures/drinks_analysis/starbucks_drinks_vitamin_c_freqpoly.png){width="600"}
 
-ANALYZE.
+From the data above, it is clear that smoothies had the most of these nutrients overall of Starbucks drinks. smoothies had the highest protein, vitamin A, and vitamin C content. This was as expected, since smoothies are known to contain many nutritious fruits and even vegetables. Similarly, Signature Espresso Drinks and Tazo Tea Drinks had a relatively high content of calcium.
 
-The Dunkin Donuts drinks data only contains information regarding each drink's protein content. The protein content of each type of drink sold at Dunkin is compared in the following table and boxplot.
+###### Dunkin Donuts
+
+The Dunkin Donuts drinks data only contains information regarding each drink's protein content, and not of vitamins or minerals. The protein content of each type of drink sold at Dunkin is compared in the following table and boxplot.
 
 ```{r}
 dunkin_table_2 <- dunkin_donuts_drinks_data |> 
@@ -213,11 +219,13 @@ kable(dunkin_table_2, caption = "Dunkin Donuts Drinks Nutritional Info, continue
 ![](figures/drinks_analysis/dunkin_drinks_protein_boxplot.png){width="600"}
 
 
-ANALYZE.
+The data indicate that iced and hot lattes had the highest content of protein of all Dunkin Donuts drinks. This is as expected, as lattes are generally made with protein-rich milk. Nonetheless, the data does not indicate much about concentration of other critical nutrients.
 
 #### Nutritional Content by Milk Type
 
 Another question I sought to answer is how the nutrition content of each drink varies by milk type. When people order drinks from coffee shops, there are many different ways they can customize their drink to their liking. Thus, I found it important to analyze nutrition by milk preference. For this analysis, I measured the fat, sugar, calories, and then protein of drinks having grouped them by milk type. I created boxplots to depict how these nutrients vary by each type of milk.
+
+###### Starbucks
 
 The following table and boxplots depict the average fat, sugar, calories, and protein for drinks of each type of milk at Starbucks. Observations with no milk were excluded from this analysis.
 
@@ -248,7 +256,9 @@ kable(starbucks_milk_table, caption = "Starbucks Drinks Average Nutritional Info
 ![](figures/drinks_analysis/starbucks_milk_calories_boxplot.png){width="600"}
 
 ![](figures/drinks_analysis/starbucks_milk_protein_boxplot.png){width="600"}
-ANALYZE.
+As expected, nonfat milk drinks had the lowest average content of fat. Nonetheless, 2%, nonfat, and soymilk drinks had roughly equivalent amounts of sugar and calories. For these drinks, it can be deduced that the type of milk has little impact on the sugar and calories, so they must be relatively similar in sugar and calorie content. Moreover, the actual drink itself has a greater impact on these nutrients than the type of milk. Lastly, 2% milk drinks had the highest protein. In total, the type of milk one should order at Starbucks depends highly on which nutrients they seek to maximize or minimize in their diet. There is no "one-size-fits-all" milk to choose from.  
+
+###### Dunkin Donuts
 
 The following table and boxplots reports the average fat, sugar, calories, and protein for drinks of each type of milk at Dunkin Donuts. Observations with no milk were excluded from this analysis.
 
@@ -289,7 +299,11 @@ Due to large overlap of boxes in the boxplots, as well as an abundance of outlie
 
 ![](figures/drinks_analysis/dunkin_milk_protein_density.png){width="600"}
 
-ANALYZE.
+From the Dunkin Donuts milk data, it is clear skim (nonfat) milk drinks had the lowest amount of fat. Sugar and calorie content was roughly equal for skim milk, whole milk, and cream drinks on average. These results are similar to the Starbucks data. Lastly, drinks made with skim and whole milk were highest in protein. 
+
+###### Overall
+
+Upon reviewing both the Starbucks and Dunkin Donuts milk data, one should order skim milk drinks in order to minimize their fat content. Their milk choice has little to no effect on their intake of sugar and calories. And ordering milk with some degree of fat provides the most protein.
 
 
 #### New metrics to assess healthiness of drinks
@@ -299,6 +313,8 @@ In the previous section, I analyzed which typs of beverage had high (or low) con
 ##### Beverages rich in protein
 
 First, I sought to determine which types of beverages were richest in protein while lowest unhealthy quantities, such as calories and fat. I compared the ratio of protein to calories for each drink type. Nevertheless, protein content can also be compared to sugar, fat, or other quantities for different metrics.
+
+###### Starbucks
 
 In the following table and scatterplot, I compare the ratio of grams of protein to calories for types of drinks at Starbucks. Due to difficulty in distinguishing data points in the scatterplot, I added faceted scatterplots as well.
 
@@ -319,9 +335,11 @@ kable(starbucks_protein_table, caption = "Starbucks Protein to Calories")
 
 ![](figures/drinks_analysis/starbucks_drinks_protein_to_calories_faceted.png){width="600"}
 
-ANALYZE
+Among Starbucks drinks, it was found that coffee alone had the highest ratio of protein to calories. This is rather misleading, because coffee is very low-calorie to begin with. Aside from coffee, Classif Espresso Drinks and then smoothies had the next highes ratios of protein to calories. This caveat indicates that more methods are needed to assess the most nutritious drink types overall.
 
-In the following table and scatterplot, I compare the same quantities for drinks at Dunkin Donuts. A single scatterplot and faceted scatterplots were included as well.
+###### Dunkin Donuts
+
+In the following table and scatterplot, I compared the same quantities for drinks at Dunkin Donuts. A single scatterplot and faceted scatterplots were included as well.
 
 ```{r}
 dunkin_protein_table <- dunkin_donuts_drinks_data |> 
@@ -333,7 +351,7 @@ dunkin_protein_table <- dunkin_donuts_drinks_data |>
          "Calories" = calories,
          "Ratio of protein (g) to calories" = ratio,
          "Drink Category" = category)
-kable(starbucks_protein_table, caption = "Protein to Calories, Dunkin ")
+kable(dunkin_protein_table, caption = "Protein to Calories, Dunkin ")
 ```
 
 
@@ -341,21 +359,21 @@ kable(starbucks_protein_table, caption = "Protein to Calories, Dunkin ")
 
 ![](figures/drinks_analysis/dunkin_drinks_protein_to_calories_faceted.png){width="600"}
 
-ANALYZE
+The data indicate that hot and iced lattes have the highest ratio of protein to calories among drinks at Dunkin Donuts. This is consistent with earlier results, which found latte drinks to have high protein contents and be relatively low calorie. 
 
 ##### Beverages rich in vitamins
 
-Another way I sought to assess how healthy beverages were was by assessing their overall vitamin and mineral contents. Unfortunately, this information was not available for the Dunkin Donuts drinks data. The Starbucks drinks data contains information regarding vitamin A, vitamin C, calcium, and iron. For this analysis, I took the sum of the listed percent daily value of each of these nutrients, and divided by four. This calculation results in an estimation of each drink type's percent daily value of all vitamins and minerals that one should consume in a day (i.e. how much of your daily vitamin and mineral content are you getting through each drink). The following table  contains information regarding the average vitamin/mineral percent daily value for each drink type and Starbucks.
+Another way I sought to assess how healthy beverages were was by assessing their overall vitamin and mineral contents. Unfortunately, this information was not available for the Dunkin Donuts drinks data. The Starbucks drinks data contains information regarding vitamin A, vitamin C, calcium, and iron. For this analysis, I took the sum of the listed percent daily value of each of these nutrients, and divided by four. This calculation results in an estimation of each drink type's percent daily value of all vitamins and minerals that one should consume in a day (i.e. how much of your daily vitamin and mineral content are you getting through each drink). The following table contains information regarding the average vitamin/mineral percent daily value for each drink type and Starbucks.
 
 ```{r}
 
 starbucks_vitamin_table <- starbucks_drinks_data |> 
   group_by(beverage_category) |> 
-  summarize(vitamin_a = round(mean(vitamin_a_percent_dv, na.rm = TRUE)),
-            vitamin_c = round(mean(vitamin_c_percent_dv, na.rm = TRUE)),
-            calcium = round(mean(calcium_percent_dv, na.rm = TRUE)),
-            iron = round(mean(iron_percent_dv, na.rm = TRUE)),
-            ratio = round((iron + calcium + vitamin_a + vitamin_c)/4, digits = 4)) |> 
+  summarize(vitamin_a = round(mean(vitamin_a_percent_dv, na.rm = TRUE), digits = 7),
+            vitamin_c = round(mean(vitamin_c_percent_dv, na.rm = TRUE), digits = 7),
+            calcium = round(mean(calcium_percent_dv, na.rm = TRUE), digits = 7),
+            iron = round(mean(iron_percent_dv, na.rm = TRUE), digits = 7),
+            ratio = round((iron + calcium + vitamin_a + vitamin_c)/4, digits = 7)) |> 
   rename("Vitamin A (%DV)" = vitamin_a, 
          "Vitamin C (%DV)" = vitamin_c,
          "Calcium (%DV)" = calcium,
@@ -366,13 +384,15 @@ kable(starbucks_vitamin_table, caption = "Average Percent Daily Value of Vitamin
 
 ```
 
-ANALYZE
+The data is largely inconclusive, given how low the values are and how difficult it is to differentiate them. Nevertheless, it was found that smoothies on average have the highest proportion of the aforementioned vitamins and minerals. This is consistent with earlier findings that supported smoothies as a nutrient-rich drink. Given the data, I would recommend smoothies as the best option for Starbucks consumers looking to maximize their intake of vitamins and minerals.
 
 ### Analysis of food data
 
 Similar to the drinks, I then sought to investigate which food items offered are considered the healthiest. The data regarding the beverages offered at Starbucks and Dunkin Donuts was largely similar and contained the same nutritional information. However, the two food datasets, `starbucks_food_data` and `dunkin_donuts_food_data` have far less similarities. The Starbucks food data contains less nutrient information and does not categorize the food items. The Dunkin food data is more detailed and labels the food items at Dunkin Donuts by type. Thus, for this section of the EDA, the analysis was split for the `starbucks_food_data` and `dunkin_donuts_food_data`.
 
 #### Nutritional information of Starbucks food items
+
+##### Univariate Analysis
 
 First, I identified the healthiest Starbucks food items in five separate categories: highest in protein, highest in fiber, lowest in fat, lowest in carbohydrates, and lowest in calories. The top five food items in each category are listed in the tables below.
 
@@ -415,7 +435,9 @@ kable(starbucks_food_calories, caption = "Lowest Calorie Foods, Starbucks")
 
 ```
 
-The results from the tables above can help consumers in selecting a food item if they are looking for a specific nutrient (or lack of a nutrient) in their diet. 
+The results from the tables above can help consumers in selecting a food item if they are looking for a specific nutrient (or lack of a nutrient) in their diet. However, the lack of categorization of this data makes it difficult for one to make generalizations about healthy, nutritious food options at Starbucks. 
+
+##### Multivariate Analysis
 
 Nonetheless, I also wanted to assess the healthiness of Starbucks food items while integrating multiple variables. Thus, for each food item, I multipled the grams of fat by the grams of fiber, and then divided by the grams of carbohydrates, grams of fat, and calories. This metric uses all five variables, whereas other metrics can use some combination of these variables.
 
@@ -441,11 +463,11 @@ starbucks_food_table <- starbucks_food_data |>
 kable(starbucks_food_table, caption = "Health Ratio of Starbucks Food Items")
 ```
 
-ANALYZE
+Upon comparing the ratios, the seasonal fruit blend appears to be the healthiest according to this metric. However, one can see the seasonal fruit blend has 0 grams of fat, which gives it a ratio of infinity. This makes this metric misleading and difficult to compare. The next healthiest option is the berry trio yogurt. Overall, the caveat in readings of this ratio indicate that more nuanced metrics are needed to compare healthiness of food options at Starbucks.
 
 #### Nutritional Information of Dunkin Donuts Food Items
 
-
+##### Univariate Analysis
 I first sought to analyze which categories of food items from Dunkin Donuts are the healthiest. The following table records the average protein, fiber, carbohydrate, fat and calorie content in each food category. The following frequency polygons illustrate the protein, fiber, carbohydrate, fat, and calorie information for each category of food items.
 
 
@@ -479,9 +501,11 @@ kable(dunkin_food_table, caption = "Dunkin Donuts Food Nutrient Information")
 
 ![](figures/food_analysis/dunkin_food_calorie_freqpoly.png)
 
-ANALYZE
+The data indicates that among Dunkin Donuts food items, kolaches were the highest in protein. It was rather inconclusive which food items were highest in fiber, as all had relatively similar amounts. Nonetheless, hash browns were the clear lowest in carbohydrates, fat, and calories, suggesting that they are the healthiest option overall. 
 
-It was also sought to determine the healthiness of Dunkin Donuts food categories using multiple variables simultaneously. Thus, the same metric applied to the starbucks food data was used to assess healthiness of each food category. The average protein content was multiplied by the average fiber content, which were then divided by the average carbohydrate and fat content. The results are in the table and frequency polygon below.
+##### Multivariate Analysis
+
+It was also sought to determine the healthiness of Dunkin Donuts food categories using multiple variables simultaneously. Thus, I applied a new metric, the "healthiness metric", to assess healthiness of each food category. The average protein content was multiplied by the average fiber content, which were then divided by the average carbohydrate and fat content. The results are in the table.
 
 ```{r}
 dunkin_food_table_2 <- dunkin_donuts_food_data |> 
@@ -504,7 +528,9 @@ kable(dunkin_food_table_2, caption = "Dunkin Donuts Food Categories' Healthiness
 ```
 
 
-ANALYZE
+The data indicates that sandwiches were the healthiest option, as they had the highest healthiness ratio. This appears to be a more accurate metric of healthiness than comparing individual quantities of nutrients, as this accounts for differences in item portions. Thus, one can say with fair confidence that sandiwches are the healthiest option at Dunkin Donuts. This is as expected, as they are known to contain many different nutrients. 
+
+###### Analysis of Individual Donuts
 
 Additionally, Dunkin Donuts is arguably best known for their donuts, so I thought it was fitting to analyze the individual donuts themselves. Many consumers come specifically to eat their donuts, so this information can help consumers select the right donut based on their dietary preferences.
 
@@ -530,7 +556,11 @@ dunkin_donuts_table <- dunkin_donuts_food_data |>
 kable(dunkin_donuts_table, caption = "Dunkin Donuts' Donuts Nutritional Information and Healthiness Ratio")
 ```
 
-Finally, I wanted to use the Dunkin Donuts food data to evaluate how accurate the healthiness metric is assessing the healthiness of a food item. The metric is based on the assumption that the protein and fiber contents (the healthy variables) are inversely proportion to the carbohydrate and fat contents (the unhealthy variables). In order to assess this relationship, the following scatterplots were made comparing the healthy variables to the unhealthy variables.  
+The table above shows the 10 donuts with the highest healthiness ratio at Dunkin Donuts. Consumers can use this information as a guide to select a donut that meets their dietary wants. 
+
+##### Asessment of Accuracy of Metrics
+
+Finally, I wanted to use the Dunkin Donuts food data to evaluate how accurate the healthiness metric is assessing the healthiness of a food item. The metric is based on the assumption that the protein and fiber contents (the healthy variables) are inversely proportion to the carbohydrate and fat contents (the unhealthy variables). In order to assess this relationship, the following scatterplots were made comparing the healthy variables to the unhealthy variables. Protein, fat, fiber, and carbohydrate were assessed per calorie in order to account for differences in portion sizes. 
 
 ![](figures/food_analysis/dunkin_food_protein_fat.png)
 
@@ -539,11 +569,15 @@ Finally, I wanted to use the Dunkin Donuts food data to evaluate how accurate th
 ![](figures/food_analysis/dunkin_food_fiber_fat.png)
 
 ![](figures/food_analysis/dunkin_food_fiber_carb.png)
+In the scatterplots above regarding Dunkin Donuts food, the slope of line of best fit indicates the correlation of the two variables. It was found that protein and fat are largely uncorrelated, as their scatterplot had a relatively horizontal line of best fit. Fiber was inversely correlated with fat, while protein was inversely correlated with carbohydrates; both of these findings support the validity of metric. Lastly, fiber was directly correlated with carbohydrates. In total, these findings indicate that the metric is inherently flawed to categorize fiber and protein as "healthy" nutrients and carbohydrates as fat as "unhealthy" nutrients. A more nuanced metric is needed to better assess health of food products.
+
 
 ### Comparison of Starbucks and Dunkin Donuts Products
-
+Having discussed the healthiest drink and the food products at both Starbucks and Dunkin Donuts, I wanted to directly compare the healthiness of products at each of these retailers.
 
 #### Comparison of Drinks
+
+I first compared drinks at Dunkin Donuts and Starbucks by their content of protein, sugar, fat and calories. The results are shown in the table and subsequent histograms and frequency polygons below. 
 
 ```{r}
 all_drinks_table <- all_drinks_data |> 
@@ -581,8 +615,11 @@ kable(all_drinks_table, caption = "Starbucks vs Dunkin Donuts Drinks Nutrition")
 ![](figures/comparison/calories_freqpoly.png)
 
 
+Overall, the table indicates that Starbucks drinks are higher in protein and fiber, while lower in carbohydrates, fat, and calories overall. This suggests that Starbucks has the healthier drink options. Nevertheless, the histograms and frequency polygons clearly have great overlap. One can reasonably assume that the retailer has a minimal impact on the healthiness of a drink.
+
 #### Comparison of Food Items
 
+Lastly, the nutrition of Starbucks and Dunkin Donuts food items were compared in the following table and histogram and frequency polygons. 
 
 ```{r}
 all_food_table <- all_food_data |> 
@@ -623,12 +660,7 @@ Data figures:
 ![](figures/comparison/food_calories_histogram.png)
 
 ![](figures/comparison/food_calories_freqpoly.png)
-
-
-
-### Summary of major findings
-
-In this section of the EDA, I compared nutritional information of drinks and food items at Starbucks and Dunkin Donuts.
+Starbucks food items had more protein and fiber, and fewer carbohydrates, fat, and calories, on average in comparison to Dunkin Donuts. This reinforces that Starbucks has healthier products overall. Once again, the great overlap of the histogram and frequency polygons indicates that that retailer and nutrition metrics are poorly correlated. Other factors aside from retailer have a greater impact on the nutrition of a food item. 
 
 ## Conclusions
 
