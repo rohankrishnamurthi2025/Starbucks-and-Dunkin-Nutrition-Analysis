@@ -540,6 +540,92 @@ Finally, I wanted to use the Dunkin Donuts food data to evaluate how accurate th
 
 ![](figures/food_analysis/dunkin_food_fiber_carb.png)
 
+### Comparison of Starbucks and Dunkin Donuts Products
+
+
+#### Comparison of Drinks
+
+```{r}
+all_drinks_table <- all_drinks_data |> 
+  group_by(retailer) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE)),
+            sugar = round(mean(sugars_g, na.rm = TRUE)),
+            fat = round(mean(fat_g, na.rm = TRUE)),
+            calories = round(mean(calories, na.rm = TRUE)),
+  ) |>   rename("Average protein  (g)" = protein, 
+                "Average sugar (g)" = sugar,
+                "Average fat (g)" = fat,
+                "Average calories" = calories,
+                "Retailer" = retailer)
+
+kable(all_drinks_table, caption = "Starbucks vs Dunkin Donuts Drinks Nutrition")
+  
+
+```
+
+
+![](figures/comparison/protein_histogram.png)
+
+![](figures/comparison/protein_freqpoly.png)
+
+![](figures/comparison/sugar_histogram.png)
+
+![](figures/comparison/sugar_freqpoly.png)
+
+![](figures/comparison/fat_histogram.png)
+
+![](figures/comparison/fat_freqpoly.png)
+
+![](figures/comparison/calories_histogram.png)
+
+![](figures/comparison/calories_freqpoly.png)
+
+
+#### Comparison of Food Items
+
+
+```{r}
+all_food_table <- all_food_data |> 
+  group_by(retailer) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE)),
+            carb = round(mean(carb_g, na.rm = TRUE)),
+            fiber = round(mean(fiber_g, na.rm = TRUE)),
+            fat = round(mean(fat_g, na.rm = TRUE)),
+            calories = round(mean(calories, na.rm = TRUE))
+  ) |>   rename("Average protein (g)" = protein, 
+                "Average carbohydrates (g)" = carb,
+                "Average fiber (g)" = fiber,
+                "Average fat (g)" = fat,
+                "Average calories" = calories,
+                "Retailer" = retailer)
+
+kable(all_food_table, caption = "Starbucks vs Dunkin Donuts Food Nutrition")
+```
+
+Data figures:
+
+![](figures/comparison/food_protein_histogram.png)
+
+![](figures/comparison/food_protein_freqpoly.png)
+
+![](figures/comparison/food_carb_histogram.png)
+
+![](figures/comparison/food_carb_freqpoly.png)
+
+![](figures/comparison/food_fiber_histogram.png)
+
+![](figures/comparison/food_fiber_freqpoly.png)
+
+![](figures/comparison/food_fat_histogram.png)
+
+![](figures/comparison/food_fat_freqpoly.png)
+
+![](figures/comparison/food_calories_histogram.png)
+
+![](figures/comparison/food_calories_freqpoly.png)
+
+
+
 ### Summary of major findings
 
 In this section of the EDA, I compared nutritional information of drinks and food items at Starbucks and Dunkin Donuts.
