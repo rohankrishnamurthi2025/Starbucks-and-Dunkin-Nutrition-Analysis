@@ -371,7 +371,7 @@ starbucks_vitamin_table <- starbucks_drinks_data |>
             vitamin_c = round(mean(vitamin_c_percent_dv, na.rm = TRUE)),
             calcium = round(mean(calcium_percent_dv, na.rm = TRUE)),
             iron = round(mean(iron_percent_dv, na.rm = TRUE)),
-            ratio = round((iron + calcium + vitamin_a + vitamin_c)/4, digits = 4)) |> 
+            ratio = ((iron + calcium + vitamin_a + vitamin_c)/4)) |> 
   rename("Vitamin A (%DV)" = vitamin_a, 
          "Vitamin C (%DV)" = vitamin_c,
          "Calcium (%DV)" = calcium,

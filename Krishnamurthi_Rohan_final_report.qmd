@@ -367,10 +367,87 @@ kable(starbucks_vitamin_table, caption = "Average Percent Daily Value of Vitamin
 
 ANALYZE
 
+### Analysis of food data
+
+Similar to the drinks, I then sought to investigate which food items offered are considered the healthiest. The data regarding the beverages offered at Starbucks and Dunkin Donuts was largely similar and contained the same nutritional information. However, the two food datasets, `starbucks_food_data` and `dunkin_donuts_food_data` have far less similarities. The Starbucks food data contains less nutrient information and does not categorize the food items. The Dunkin food data is more detailed and labels the food items at Dunkin Donuts by type. Thus, for this section of the EDA, the analysis was split for the `starbucks_food_data` and `dunkin_donuts_food_data`.
+
+#### Nutritional information of Starbucks food items
+
+First, I identified the healthiest Starbucks food items in five separate categories: highest in protein, highest in fiber, lowest in fat, lowest in carbohydrates, and lowest in calories. The top five food items in each category are listed in the tables below.
+
+```{r}
+starbucks_food_protein <- starbucks_food_data |> 
+  arrange(desc(protein_g)) %>%
+  slice(1:5) |> 
+  select(item, protein_g)
+
+kable(starbucks_food_protein, caption = "Highest Protein Foods, Starbucks")
+
+starbucks_food_fiber <- starbucks_food_data |> 
+  arrange(desc(fiber_g)) %>%
+  slice(1:5) |> 
+  select(item, fiber_g)
+
+kable(starbucks_food_fiber, caption = "Highest Fiber Foods, Starbucks")
+
+
+starbucks_food_fat <- starbucks_food_data |> 
+  arrange(fat_g) %>%
+  slice(1:5) |> 
+  select(item, fat_g)
+
+kable(starbucks_food_fat, caption = "Least Fat Foods, Starbucks")
+
+starbucks_food_carb <- starbucks_food_data |> 
+  arrange(carb_g) %>%
+  slice(1:5) |> 
+  select(item, carb_g)
+
+kable(starbucks_food_carb, caption = "Lowest Carbohydrate Foods, Starbucks")
+
+starbucks_food_calories <- starbucks_food_data |> 
+  arrange(calories) %>%
+  slice(1:5) |> 
+  select(item, calories)
+
+kable(starbucks_food_calories, caption = "Lowest Calorie Foods, Starbucks")
+
+```
+
+The results from the tables above can help consumers in selecting a food item if they are looking for a specific nutrient (or lack of a nutrient) in their diet. 
+
+Nonetheless, I also wanted to assess the healthiness of Starbucks food items while integrating multiple variables. Thus, for each food item, I multipled the grams of fat by the grams of fiber, and then divided by the grams of carbohydrates, grams of fat, and calories. This metric uses all five variables, whereas other metrics can use some combination of these variables.
+
+```{r}
+starbucks_food_table <- starbucks_food_data |> 
+  group_by(item) |> 
+  summarize(protein = round(mean(protein_g, na.rm = TRUE)),
+            fiber = round(mean(fiber_g, na.rm = TRUE)),
+            fat = round(mean(fat_g, na.rm = TRUE)),
+            carb = round(mean(carb_g, na.rm = TRUE)),
+            fiber_g = round(mean(fiber_g, na.rm = TRUE)),
+            ratio = round((protein*fiber)/(fat*carb), digits = 4)) |> 
+  top_n(10, ratio) |> 
+  arrange(desc(ratio)) |> 
+  rename("Protein (g)" = protein, 
+         "Fiber (g)" = fiber,
+         "Carbohydrates (g)" = carb,
+         "Fat (g)" = fiber,
+         "Healthiness Ratio" = ratio,
+         "Food Item" = item)
+  
+
+kable(starbucks_food_table, caption = "Health Ratio of Starbucks Food Items")
+```
+
+
+
+
+
 
 ### Summary of major findings
 
-In this section of the EDA, I compared nutritional information of drinks at Starbucks and Dunkin Donuts.
+In this section of the EDA, I compared nutritional information of drinks and food items at Starbucks and Dunkin Donuts.
 
 ## Conclusions
 
